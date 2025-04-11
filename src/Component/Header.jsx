@@ -1,25 +1,42 @@
 import * as React from 'react';
-import {
-  AppBar,
-  Box,
-  Toolbar,
-  IconButton,
-  Typography,
-  InputBase,
-  Badge,
-  MenuItem,
-  Menu
-} from '@mui/material';
-
 import { styled, alpha } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import InputBase from '@mui/material/InputBase';
+import Badge from '@mui/material/Badge';
+import MenuItem from '@mui/material/MenuItem';
+import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import { Divider } from '@mui/material';
+import SideBar from './SideBar';
 
-// 🧠 Styled components must be outside the component function
+
+
+// import { makeStyles } from '@material-ui/core/styles'; // v4
+
+// const useStyles = makeStyles((theme) => ({
+//   title: {
+//     flexGrow: 1,
+//   },
+//   tagline: {
+//     fontSize: 20,
+//   },
+// }));
+
+
+
+
+
+
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -28,7 +45,7 @@ const Search = styled('div')(({ theme }) => ({
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
   marginRight: theme.spacing(2),
-  marginLeft: 12,
+  marginLeft: 0,
   width: '100%',
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(3),
@@ -50,17 +67,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('md')]: {
-      width: '100ch',
+      width: '20ch',
     },
   },
 }));
 
-// ✅ Component starts here
-function Header() {
+export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -85,15 +102,19 @@ function Header() {
   };
 
   const menuId = 'primary-search-account-menu';
-  const mobileMenuId = 'primary-search-account-menu-mobile';
-
   const renderMenu = (
     <Menu
       anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      anchorOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
       id={menuId}
       keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      transformOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
@@ -102,13 +123,20 @@ function Header() {
     </Menu>
   );
 
+  const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      anchorOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
       id={mobileMenuId}
       keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      transformOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
@@ -121,7 +149,11 @@ function Header() {
         <p>Messages</p>
       </MenuItem>
       <MenuItem>
-        <IconButton size="large" aria-label="show 17 new notifications" color="inherit">
+        <IconButton
+          size="large"
+          aria-label="show 17 new notifications"
+          color="inherit"
+        >
           <Badge badgeContent={17} color="error">
             <NotificationsIcon />
           </Badge>
@@ -144,20 +176,42 @@ function Header() {
   );
 
   return (
+    <>
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton size="large" edge="start" color="inherit" aria-label="open drawer" sx={{ mr: 2 }}>
+
+        <SideBar>
+        <MenuIcon/>
+        <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            sx={{ mr: 2 }}
+          >
             <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div" sx={{ display: { xs: 'none', sm: 'block' } }}>
-            MUI
+            </IconButton>
+
+        </SideBar>
+          
+          
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ display: { xs: 'none', sm: 'block' } }}
+          >
+            TCP
           </Typography>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
-            <StyledInputBase placeholder="Search…" inputProps={{ 'aria-label': 'search' }} />
+            <StyledInputBase
+              placeholder="Search…"
+              inputProps={{ 'aria-label': 'search' }}
+            />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
@@ -166,7 +220,11 @@ function Header() {
                 <MailIcon />
               </Badge>
             </IconButton>
-            <IconButton size="large" aria-label="show 17 new notifications" color="inherit">
+            <IconButton
+              size="large"
+              aria-label="show 17 new notifications"
+              color="inherit"
+            >
               <Badge badgeContent={17} color="error">
                 <NotificationsIcon />
               </Badge>
@@ -200,7 +258,56 @@ function Header() {
       {renderMobileMenu}
       {renderMenu}
     </Box>
+
+
+
+
+
+<Toolbar>
+        
+        <SideBar>
+
+        
+
+        </SideBar>
+        
+        <IconButton >
+        <MenuIcon/>
+        </IconButton>
+   
+        {/* className={classes.title} */}
+             <Typography variant='h5' color='inherit' >  Name </Typography>
+
+
+             <IconButton>
+             <Badge badgeContent={17} color='secondary'>
+             <NotificationsIcon/> 
+               </Badge> 
+
+             </IconButton>
+
+             <IconButton>
+                <AccountCircle/>
+            </IconButton>
+{/*        
+        
+        <NotificationsIcon/> */}
+   
+</Toolbar>
+           
+
+<Divider></Divider>
+{/* className={classes.tagline} */}
+
+<Toolbar color='inherit'  >
+    Express Your Ideas to Design
+</Toolbar>
+    </>
   );
 }
 
-export default Header;
+
+
+//The Header Has Completed
+
+

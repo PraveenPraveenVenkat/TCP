@@ -1,18 +1,61 @@
-import { useState } from 'react'
+import { Button, ThemeProvider } from "@mui/material";
+import { createTheme } from '@mui/material/styles';
 import viteLogo from '/vite.svg'
-import './App.css'
+// import './App.css'
 import Header from './Header'
+import LoadingIconButton from "./LoadingIconButton";
+import AccessibilityIcon from '@mui/icons-material/Accessibility';
+import FeaturePost from "./FeaturePost";
+import SideBar from "./SideBar";
+
+
+
+
+
+const theme = createTheme({
+
+  palette: {
+    primary: {
+      main: '#6200ea',
+    },
+    secondary: {
+      main: '#e1bee7',
+    },
+  },
+});
+
+
+{/* secondary: {
+                         light: '#ff7961',
+                          main: '#f44336',
+                           dark: '#ba000d',
+                          contrastText: '#000', */}
+
 
 function App() {
 
 
   return (
     <>
-      <div>
-        <Header/>
-        </div>
+     {/* <Button color="inherit" startIcon={<AccessibilityIcon/>} size="large" variant="contained">Contained</Button> */}
+     {/* <Button variant="outlined" startIcon={<DeleteIcon />}> */}
+  {/* Delete
+</Button> */}
+      {/* <ThemeProvider theme={theme}> */}
+
+      {/* <container> */}
+      <Header />
+      <FeaturePost/>
+      <SideBar/>
+      {/* </container> */}
+        
+      {/* </ThemeProvider> */}
+      {/* <LoadingIconButton /> */}
     </>
-  )
+  );
+
+
+
 }
 
 export default App;
@@ -40,7 +83,7 @@ export default App;
 // const Header=(props)=>{
 
 //   // console.log('Header props:', props);
-   
+
 
 //   return(
 //      <> 
@@ -90,16 +133,16 @@ export default App;
 
 
 // function App() {
-  // const [count, setCount] = useState(0)
+// const [count, setCount] = useState(0)
 
-  // return (
-  //   <>
-  //   <h2>Heading</h2>
-  //    <Header />
-  //    <Api/>
-  //    <Parent/>
-     
-      {/* <div>
+// return (
+//   <>
+//   <h2>Heading</h2>
+//    <Header />
+//    <Api/>
+//    <Parent/>
+
+{/* <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
