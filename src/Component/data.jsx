@@ -1,8 +1,29 @@
-export const section =[
-    {title:"Home"},
-    {title:"About Us"},
-    {title:"Contact Us"},
-    {title:"Home"},
-    {title:"Home"},
-    {title:"Home"},
-];
+const Data = [
+    {
+      title: "Home",
+      icon: "InboxIcon",
+      path: "/home"
+    },
+    {
+      title: "Services",
+      icon: "MailIcon",
+      path: "/services",
+      subMenu: [
+        { title: "Web Development", path: "/services/web" },
+        { title: "App Development", path: "/services/app" }
+      ]
+    },
+    {
+      title: "About Us",
+      icon: "InboxIcon",
+      path: "/about"
+    },
+    {
+      title: "Contact",
+      icon: "MailIcon",
+      path: "/contact"
+    }
+  ];
+  
+  export default Data;
+  

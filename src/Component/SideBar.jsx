@@ -1,28 +1,35 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
+import { 
+  Box, 
+  Drawer, 
+  Button, 
+  List, 
+  Divider, 
+  ListItem, 
+  ListItemButton, 
+  ListItemIcon, 
+  ListItemText,
+  Toolbar,
+  Typography,
+  IconButton,
+  Badge
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import AccountCircle from '@mui/icons-material/AccountCircle';
 
-export default function SideBar({childern}) {
-
+// Sidebar component
+function SideBar({ children }) {
   const [state, setState] = React.useState({
     left: false,
-   
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
-
     setState({ ...state, [anchor]: open });
   };
 
@@ -63,18 +70,21 @@ export default function SideBar({childern}) {
 
   return (
     <div>
-     
-        <React.Fragment key={"left"}>
-          <Button id="sidebarBtn" onClick={toggleDrawer("left", true)}>{childern}</Button>
-          <Drawer
-            anchor={"left"}
-            open={state["left"]}
-            onClose={toggleDrawer("left", false)}
-          >
-            {list("left")}
-          </Drawer>
-        </React.Fragment>
-     
+      <React.Fragment key={"left"}>
+        <div onClick={toggleDrawer("left", true)}>
+          {children}
+        </div>
+        <Drawer
+          anchor={"left"}
+          open={state["left"]}
+          onClose={toggleDrawer("left", false)}
+        >
+          {list("left")}
+        </Drawer>
+      </React.Fragment>
     </div>
   );
 }
+
+// Main App Component
+export default SideBar

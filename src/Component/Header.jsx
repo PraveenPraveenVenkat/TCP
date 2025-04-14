@@ -140,7 +140,7 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
+      <MenuItem  color='secondary'>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
             <MailIcon />
@@ -182,11 +182,11 @@ export default function PrimarySearchAppBar() {
         <Toolbar>
 
         <SideBar>
-        <MenuIcon/>
+      
         <IconButton
             size="large"
             edge="start"
-            color="inherit"
+            color="secondary"
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
@@ -262,46 +262,31 @@ export default function PrimarySearchAppBar() {
 
 
 
-
-<Toolbar>
-        
+   
+   
+      <Toolbar>
         <SideBar>
-
-        
-
+          <IconButton color="inherit" aria-label="open drawer">
+            <MenuIcon />
+          </IconButton>
         </SideBar>
         
-        <IconButton >
-        <MenuIcon/>
-        </IconButton>
-   
-        {/* className={classes.title} */}
-             <Typography variant='h5' color='inherit' >  Name </Typography>
-
-
-             <IconButton>
-             <Badge badgeContent={17} color='secondary'>
-             <NotificationsIcon/> 
-               </Badge> 
-
-             </IconButton>
-
-             <IconButton>
-                <AccountCircle/>
-            </IconButton>
-{/*        
+        <Typography variant='h5' color='inherit' sx={{ flexGrow: 1 }}>
+          Name
+        </Typography>
         
-        <NotificationsIcon/> */}
-   
-</Toolbar>
-           
+        <IconButton color="inherit">
+          <Badge badgeContent={17} color='secondary'>
+            <NotificationsIcon />
+          </Badge>
+        </IconButton>
+        
+        <IconButton color="inherit">
+          <AccountCircle />
+        </IconButton>
+      </Toolbar>
+    
 
-<Divider></Divider>
-{/* className={classes.tagline} */}
-
-<Toolbar color='inherit'  >
-    Express Your Ideas to Design
-</Toolbar>
     </>
   );
 }
