@@ -194,7 +194,7 @@ export default function PrimarySearchAppBar() {
             </IconButton>
 
         </SideBar>
-          
+  
           
           <Typography
             variant="h6"
@@ -263,7 +263,7 @@ export default function PrimarySearchAppBar() {
 
 
    
-   
+{/*    
       <Toolbar>
         <SideBar>
           <IconButton color="inherit" aria-label="open drawer">
@@ -285,7 +285,7 @@ export default function PrimarySearchAppBar() {
           <AccountCircle />
         </IconButton>
       </Toolbar>
-    
+     */}
 
     </>
   );
