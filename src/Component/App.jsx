@@ -5,7 +5,7 @@ import SideBar from "./SideBar";
 import Home from "./Home";
 import Project from './Project';
 import Teams from './Teams';
-import LoginForm from './LoginForm';
+import Login from './Login';
 import OurGrowth from './OurGrowth';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -37,8 +37,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Project" element={<Project/>} />
         <Route path="/Teams" element={<Teams/>} />
+        <Route path="/Login" element={<Login/>} />
         <Route path="/OurGrowth" element={<OurGrowth />} />
-        <Route path="/LoginForm" element={<LoginForm />} />
+        
       </Routes>
 
       {/* <FeaturePost /> */}
@@ -52,14 +53,3 @@ function App() {
 
 export default App;
 
-
-
-
-// import{
-//   SideBar,
-// Home,
-// Project,
-// Teams,
-// LoginForm,
-// OurGrowth,
-// } from React

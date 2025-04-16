@@ -1,7 +1,8 @@
 import { Button,Stack,  CardContent, Typography } from '@mui/material';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
-import { styled } from '@mui/material/styles';
+import LoginIcon from '@mui/icons-material/Login';
 import { makeStyles } from '@mui/styles';
+import { Link } from 'react-router-dom';
 import React from 'react';
 
 const useStyles = makeStyles({
@@ -24,7 +25,32 @@ const Home = () => {
 
   return (
     <>
-  
+  {/* <Button sx={{
+             border:2,
+         color:'black',
+         spacing:4,
+        '&:hover': {
+      backgroundColor: '#115293',
+      paddingRight:12, */}
+    {/* }, */}
+       {/* onclick={()} */}
+  {/* component={Link} to={"./Login"}  */}
+       {/* }}>LOGIN<LoginIcon/> </Button>  */}
+       <Button
+  sx={{
+    border: 2,
+    color: 'black',
+    spacing: 4,
+    '&:hover': {
+      backgroundColor: '#115293',
+      paddingRight: 12,
+    },
+  }}
+  component={Link}
+  to="/login" // Make sure your route is set up like <Route path="/login" element={<LoginPage />} />
+>
+  LOGIN <LoginIcon />
+</Button>
     
       <CardContent>
         <Typography variant="h3" className={classes.title}>
