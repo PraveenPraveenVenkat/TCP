@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Box,
   Drawer,
@@ -49,9 +50,10 @@ function SideBar({ children }) {
               <List component="div" disablePadding sx={{ pl: 4}}>
                 {item.subMenu.map((subItem, subIndex) => (
                   <ListItem key={subIndex} disablePadding>
-                    <ListItemButton>
-                      <ListItemText primary={subItem.title}/>
-                    </ListItemButton>
+                   <ListItemButton component={Link} to={subItem.path}>
+                   <ListItemText primary={subItem.title} />
+                     </ListItemButton>
+
                   </ListItem>
                 ))}
               </List>

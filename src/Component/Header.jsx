@@ -16,6 +16,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Divider } from '@mui/material';
+import { Link } from 'react-router-dom';
 import SideBar from './SideBar';
 
 
@@ -118,7 +119,7 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose} component={Link} to={"./LoginForm"}>Log In</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   );
@@ -258,41 +259,12 @@ export default function PrimarySearchAppBar() {
       {renderMobileMenu}
       {renderMenu}
     </Box>
-
-
-
-
-   
-{/*    
-      <Toolbar>
-        <SideBar>
-          <IconButton color="inherit" aria-label="open drawer">
-            <MenuIcon />
-          </IconButton>
-        </SideBar>
-        
-        <Typography variant='h5' color='inherit' sx={{ flexGrow: 1 }}>
-          Name
-        </Typography>
-        
-        <IconButton color="inherit">
-          <Badge badgeContent={17} color='secondary'>
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        
-        <IconButton color="inherit">
-          <AccountCircle />
-        </IconButton>
-      </Toolbar>
-     */}
-
     </>
   );
 }
 
 
 
-//The Header Has Completed
+
 
 

@@ -16,17 +16,17 @@ const Data = [
     path: "/Home",
     subMenu: [
       { title: "Project", path:"/Project", },
-      { title: "Teams", path: "/Temas" },
+      { title: "Teams", path: "/Teams" },
     ],
   },
-
+ 
   {
     title: "About Us",
     icon: <Groups2Icon/>,
     icon1:<ArrowDropDownIcon/>,
     path: "/about",
     subMenu: [
-      { title: "Our Growth", path: "/Our Growth" },
+      { title: "Our Growth", path: "/OurGrowth" },
       { title: "Our Vision", path: "/Our Vision" },
     ],
   },
