@@ -30,7 +30,6 @@ const Teams = () => {
         <Grid item xs={4}>
           <Item>size=4</Item>
         </Grid>
-        
       </Grid>
 
 

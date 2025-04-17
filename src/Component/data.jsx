@@ -27,7 +27,7 @@ const Data = [
     path: "/about",
     subMenu: [
       { title: "Our Growth", path: "/OurGrowth" },
-      { title: "Our Vision", path: "/Our Vision" },
+      { title: "Our Vision", path: "/OurVision" },
     ],
   },
 
@@ -37,8 +37,8 @@ const Data = [
     icon1:<ArrowDropDownIcon/>,
     path: "/services",
     subMenu: [
-      { title: "Web Development", path: "/Web Development" },
-      { title: "App Development", path: "/App Development" },
+      { title: "Web Development", path: "/WebDevelopment" },
+      { title: "App Development", path: "/AppDevelopment" },
       { title: "3D Architect", path: "/Architect" },
     ],
   },

@@ -1,8 +1,10 @@
-import { Button,Stack,  CardContent, Typography } from '@mui/material';
+import { Button,Stack,  CardContent, Typography ,Grid,Box} from '@mui/material';
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import LoginIcon from '@mui/icons-material/Login';
 import { makeStyles } from '@mui/styles';
 import { Link } from 'react-router-dom';
+import AppShortcutIcon from '@mui/icons-material/AppShortcut';
 import React from 'react';
 
 const useStyles = makeStyles({
@@ -15,8 +17,37 @@ const useStyles = makeStyles({
     fontFamily: 'Montserrat',
 
   },
+  box: {
+    display: 'flex',
+    flexDirection: 'column', // <-- stack text, image, and icon vertically
+    alignItems: 'center',
+    justifyContent: 'center',
+    border: '2px solid #ccc',
+    padding: 12,
+    width:"13rem",
+    height: '19rem',
+    borderRadius: 2,
+    gap: '3rem',
+    textAlign: 'center',
+    paddingBottom:12,
+  },
+  image: {
+    paddingTop:22,
+    height: "8rem",
+    width: "12.5rem",
+  },
+  // box: {
+  //   display: 'flex',
+  //   alignItems: 'center',
+  //   border: '2px solid #ccc',
+  //   padding: 12,
+  //   height: '19rem',
+  //   paddingLeft: '5rem',
+  //   gap: '2rem', // smaller gap to keep image inside
+  //   borderRadius: 8,
+  // },
 
-
+ 
 
 });
 
@@ -52,6 +83,7 @@ const Home = () => {
   LOGIN <LoginIcon />
 </Button>
     
+{/* padding: { xs: 4, sm: 6, md: 8, lg: 12 }, */}
       <CardContent>
         <Typography variant="h3" className={classes.title}>
           Best <br /> Place for Creative <br /> Digital Solution
@@ -107,6 +139,187 @@ const Home = () => {
       }}>ABOUT US< TrendingFlatIcon /> </Button> 
          {/* </Typography> */}
          </Stack>
+
+                                        {/* Our Services Section */}
+         <Typography variant='h2' sx={{
+            paddingTop:24,
+          textAlign:"center"
+         }}>
+         Our Services
+         </Typography>
+
+
+         <Typography
+          sx={{
+            
+           textAlign:"center",
+            paddingTop:6,
+          }}
+        >
+         Comprehensive Website Services to Ignite Your Online Success. Empower
+         Your Business<br></br>  with Powerful Online Services from our Website.
+          Designs.
+        </Typography>
+
+
+        {/* <Grid
+      container
+      columns={12}
+      sx={{ minHeight: '100vh' }}
+    >
+      {/* LEFT SIDE - LOGIN FORM */}
+      {/* <Grid
+        columnSpan={{ xs: 12, md: 6 }}
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          p: 4,
+        }}
+      >
+        <Container maxWidth="sm">
+          <Box
+            component={Paper}
+            elevation={6}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 2,
+              padding: 4,
+              border: '2px solid #ccc',
+              borderRadius: 4,
+              boxShadow: 4,
+            }} */}
+          {/* >  */}
+
+          {/* <TextField
+              fullWidth
+              label="Username"
+              variant="outlined"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <PersonIcon />
+                  </InputAdornment>
+                ),
+              }}></TextField> */}
+            
+        
+            <Grid container sx={{
+              gap:8,paddingLeft: '19rem',paddingTop:"8rem",
+              
+            }} spacing={2}>
+      <Grid item xs={4}>
+        <Box className={classes.box}>
+        
+        <ArrowOutwardIcon  sx={{alignItems:"Left"}}/>
+          <Typography variant="h6" sx={{}}>Web Development</Typography>
+          
+          <img
+            src='https://vdigtech.com/wp-content/uploads/2024/03/Image-20.jpg'
+            alt='Web Dev'
+            className={classes.image}
+          />
+         
+        </Box>
+      </Grid>
+
+      <Grid item xs={4}>
+        <Box className={classes.box}>
+  
+        <ArrowOutwardIcon  sx={{alignItems:"Left"}} />
+          <Typography variant="h6">App Development</Typography>
+          <img
+            src='https://vdigtech.com/wp-content/uploads/2024/03/Image-21.jpg'
+            alt='App Dev'
+            className={classes.image}
+          />
+         
+        </Box>
+      </Grid>
+
+      <Grid item xs={4}>
+        <Box className={classes.box}>
+        <ArrowOutwardIcon  sx={{alignItems:"Left"}}/>
+          <Typography variant="h6">Digital Marketing</Typography>
+          <img
+            src='https://vdigtech.com/wp-content/uploads/2024/03/Image-27.jpg'
+            alt='Digital Marketing'
+            className={classes.image}
+          />
+       
+        </Box>
+      </Grid>
+
+      <Grid item xs={4}>
+        <Box className={classes.box}>
+        <ArrowOutwardIcon  sx={{alignItems:"Left"}}/>
+          <Typography variant="h6">Website Maintenance</Typography>
+          <img
+            src='https://vdigtech.com/wp-content/uploads/2024/03/Image-24.jpg'
+            alt='Graphic Design'
+            className={classes.image}
+          />
+         
+        </Box>
+      </Grid>
+
+      
+    </Grid>
+
+    <Grid container sx={{
+              gap:8,paddingLeft: '37.5rem',paddingTop:"2rem",
+              
+            }} spacing={2}>
+     
+     
+
+     
+
+      <Grid item xs={4}>
+        <Box className={classes.box}>
+        <ArrowOutwardIcon  sx={{alignItems:"Left"}}/>
+          <Typography variant="h6">Digital Marketing</Typography>
+          <img
+            src='https://vdigtech.com/wp-content/uploads/2024/03/Untitled-design-2.png'
+            alt='Digital Marketing'
+            className={classes.image}
+          />
+       
+        </Box>
+      </Grid>
+
+      <Grid item xs={4}>
+        <Box className={classes.box}>
+        <ArrowOutwardIcon  sx={{alignItems:"Left"}}/>
+          <Typography variant="h6">Graphic Design</Typography>
+          <img
+            src='https://vdigtech.com/wp-content/uploads/2024/03/Untitled-design-1.png'
+            alt='Graphic Design'
+            className={classes.image}
+          />
+         
+        </Box>
+      </Grid>
+
+      
+    </Grid>
+
+          {/* <Grid spacing={2} className={classes.box}>
+
+              <Grid item={4}  className={classes.box} 
+              > Web Development <img style={{}} src='https://vdigtech.com/wp-content/uploads/2024/03/Image-20.jpg '></img> <ArrowOutwardIcon /></Grid>
+            <Grid item={4} className={classes.box} > App Development <img style={{}} src='https://vdigtech.com/wp-content/uploads/2024/03/Image-20.jpg '></img> <ArrowOutwardIcon/></Grid>
+            <Grid item={4} className={classes.box} >Digital Marketing <img style={{}} src='https://vdigtech.com/wp-content/uploads/2024/03/Image-20.jpg '></img> <ArrowOutwardIcon/></Grid>
+            <Grid item={4} className={classes.box} >Graphic Design <img style={{}} src='https://vdigtech.com/wp-content/uploads/2024/03/Image-20.jpg '></img> <ArrowOutwardIcon/></Grid>
+            
+          </Grid> */}
+
+          {/*<ExpandLess></ExpandLess>*/}
+          
+
+     {/* npm i @mui/material @emotion/react @emotion/style */}
 </>
   );
 };

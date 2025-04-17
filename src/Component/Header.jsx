@@ -47,6 +47,7 @@ const Search = styled('div')(({ theme }) => ({
   },
   marginRight: theme.spacing(2),
   marginLeft: 0,
+  
   width: '100%',
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(3),
@@ -120,8 +121,8 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
 
     >
-      {/* component={Link} to={"./Login"} */}
-      <MenuItem onClick={handleMenuClose} >Log In</MenuItem>
+     
+      <MenuItem onClick={handleMenuClose}  component={Link} to={"./Login"} >Log In</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   );
