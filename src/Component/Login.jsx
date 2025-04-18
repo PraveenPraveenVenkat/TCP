@@ -22,12 +22,13 @@ import img from './img.png';
 
 const Login = () => {
   return (
+
     <Grid
       container
       columns={12}
       sx={{ minHeight: '100vh' }}
     >
-      {/* LEFT SIDE - LOGIN FORM */}
+      {/*//? LEFT SIDE - LOGIN FORM */}
       <Grid
         columnSpan={{ xs: 12, md: 6 }}
         sx={{
@@ -110,6 +111,7 @@ const Login = () => {
                   backgroundImage: 'linear-gradient(45deg, #2bcbe0, #c94be1)',
                 },
               }}
+              component= {Link} to={"/"}
             >
               Submit
             </Button>
@@ -135,7 +137,7 @@ const Login = () => {
         </Container>
       </Grid>
 
-      {/* RIGHT SIDE - IMAGE */}
+      {/* //? RIGHT SIDE - IMAGE */}
       <Grid
         columnSpan={{ xs: 12, md: 6 }}
         sx={{
@@ -164,22 +166,7 @@ export default Login;
 
 
 
-// import { Box,Typography,TextField,IconButton, Button,Container,Grid,InputAdornment, Paper } from '@mui/material'
-// import { blue } from '@mui/material/colors';
-// import LinkedInIcon from '@mui/icons-material/LinkedIn';
-// import GitHubIcon from '@mui/icons-material/GitHub';
-// import GoogleIcon from '@mui/icons-material/Google';
-// import PersonIcon from '@mui/icons-material/Person';
-// import LockOutlineIcon from '@mui/icons-material/LockOutline';
-// import VisibilityIcon from '@mui/icons-material/Visibility';
-// import img from './img.png';
-// import React from 'react'
-// import { Link } from 'react-router-dom';
-
-// const Login= () => {
-
-//   return (
-//     <>
+   
 
 
 
@@ -362,13 +349,6 @@ export default Login;
 //          </Paper>
 //          {/* </Grid> */}
 //          </Grid>
-
-
-//     </>  
-//   )
-// }
-// export default Login;
-
 
 
 

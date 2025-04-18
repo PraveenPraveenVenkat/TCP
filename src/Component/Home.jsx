@@ -5,7 +5,10 @@ import LoginIcon from '@mui/icons-material/Login';
 import { makeStyles } from '@mui/styles';
 import { Link } from 'react-router-dom';
 import AppShortcutIcon from '@mui/icons-material/AppShortcut';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import React from 'react';
+import { keyframes } from "@emotion/react";
+
 
 const useStyles = makeStyles({
   title: {
@@ -53,6 +56,10 @@ const useStyles = makeStyles({
 
 const Home = () => {
   const classes = useStyles();
+  const scroll=keyframes`
+  0%{transform:translateX(100%);}
+  100{transform:translateX)(-100%);}
+  `;
 
   return (
     <>
@@ -204,17 +211,18 @@ const Home = () => {
                   </InputAdornment>
                 ),
               }}></TextField> */}
+              {/* //!First Grid Box */}
             
-        
+            
             <Grid container sx={{
-              gap:8,paddingLeft: '19rem',paddingTop:"8rem",
+              gap:8,paddingLeft: '13rem',paddingTop:"8rem",
               
             }} spacing={2}>
       <Grid item xs={4}>
         <Box className={classes.box}>
         
         <ArrowOutwardIcon  sx={{alignItems:"Left"}}/>
-          <Typography variant="h6" sx={{}}>Web Development</Typography>
+          <Typography variant="h6" sx={{mt:2,}}>Web Development</Typography>
           
           <img
             src='https://vdigtech.com/wp-content/uploads/2024/03/Image-20.jpg'
@@ -229,7 +237,7 @@ const Home = () => {
         <Box className={classes.box}>
   
         <ArrowOutwardIcon  sx={{alignItems:"Left"}} />
-          <Typography variant="h6">App Development</Typography>
+          <Typography variant="h6"sx={{mt:2,}} >App Development</Typography>
           <img
             src='https://vdigtech.com/wp-content/uploads/2024/03/Image-21.jpg'
             alt='App Dev'
@@ -242,7 +250,7 @@ const Home = () => {
       <Grid item xs={4}>
         <Box className={classes.box}>
         <ArrowOutwardIcon  sx={{alignItems:"Left"}}/>
-          <Typography variant="h6">Digital Marketing</Typography>
+          <Typography variant="h6" sx={{mt:2,}} >Digital Marketing</Typography>
           <img
             src='https://vdigtech.com/wp-content/uploads/2024/03/Image-27.jpg'
             alt='Digital Marketing'
@@ -255,7 +263,7 @@ const Home = () => {
       <Grid item xs={4}>
         <Box className={classes.box}>
         <ArrowOutwardIcon  sx={{alignItems:"Left"}}/>
-          <Typography variant="h6">Website Maintenance</Typography>
+          <Typography variant="h6" sx={{mt:2,}}>Website Maintenance</Typography>
           <img
             src='https://vdigtech.com/wp-content/uploads/2024/03/Image-24.jpg'
             alt='Graphic Design'
@@ -269,13 +277,13 @@ const Home = () => {
     </Grid>
 
     <Grid container sx={{
-              gap:8,paddingLeft: '37.5rem',paddingTop:"2rem",
+              gap:8,paddingLeft: '31.5rem',paddingTop:"2rem",
               
             }} spacing={2}>
      
      
 
-     
+       {/* //?Second Grid Box */}
 
       <Grid item xs={4}>
         <Box className={classes.box}>
@@ -305,68 +313,43 @@ const Home = () => {
 
       
     </Grid>
+   
+  <Box
+      sx={{
+        overflow: "hidden",
+        whiteSpace: "nowrap",
+        width: "100%",
+        mt:4,
+        padding:5,
+        backgroundColor: "#a6d4fa",
+        gap:6,
+      }}
+    >
+      <Typography
+        variant="h6"
+        component="div"
+        sx={{
+          display: "inline-block",
+          padding: "10px",
+          animation: `${scroll} 10s linear infinite`,
+        }}
+      >
+        
+        <AutoAwesomeIcon sx={{gap:6,}}/>
+      Creative People
+ 
+      <AutoAwesomeIcon sx={{gap:6,}}/>
+      Good Reviews
+      <AutoAwesomeIcon sx={{gap:6,}}/>
+      Awesome Design
+      <AutoAwesomeIcon sx={{gap:6,}}/>
+      Fast Delivery
 
-          {/* <Grid spacing={2} className={classes.box}>
-
-              <Grid item={4}  className={classes.box} 
-              > Web Development <img style={{}} src='https://vdigtech.com/wp-content/uploads/2024/03/Image-20.jpg '></img> <ArrowOutwardIcon /></Grid>
-            <Grid item={4} className={classes.box} > App Development <img style={{}} src='https://vdigtech.com/wp-content/uploads/2024/03/Image-20.jpg '></img> <ArrowOutwardIcon/></Grid>
-            <Grid item={4} className={classes.box} >Digital Marketing <img style={{}} src='https://vdigtech.com/wp-content/uploads/2024/03/Image-20.jpg '></img> <ArrowOutwardIcon/></Grid>
-            <Grid item={4} className={classes.box} >Graphic Design <img style={{}} src='https://vdigtech.com/wp-content/uploads/2024/03/Image-20.jpg '></img> <ArrowOutwardIcon/></Grid>
-            
-          </Grid> */}
-
+      </Typography>
+    </Box>
           {/*<ExpandLess></ExpandLess>*/}
-          
-
-     {/* npm i @mui/material @emotion/react @emotion/style */}
 </>
   );
 };
 
 export default Home;
-
-
-
-{/* <Stack direction="row" gap={2}>
-  <Button>One</Button>
-  <Button>Two</Button>
-</Stack> */}
-
-
-// <Box display="flex" gap={2}>
-//   <Button>One</Button>
-//   <Button>Two</Button>
-// </Box>
-
-
-// <Button sx={{ mr: 2 }}>One</Button>
-// <Button>Two</Button>
-
-
-
-// <Button
-//   sx={{
-//     backgroundColor: '#1976d2',
-//     color: '#fff',
-//     '&:hover': {
-//       backgroundColor: '#115293',
-//     },
-//   }}
-// >
-//   Hover Me
-// </Button>
-
-
-// <Box
-//   sx={{
-//     padding: 1,
-//     cursor: 'pointer',
-//     '&:hover': {
-//       color: 'primary.main',
-//       backgroundColor: '#f0f0f0',
-//     },
-//   }}
-// >
-//   Hover over me!
-// </Box>
