@@ -24,9 +24,9 @@ const Login = () => {
   return (
 
     <Grid
-      container
-      columns={12}
-      sx={{ minHeight: '100vh' }}
+    container spacing={2}
+      columns={2}
+      sx={{ minHeight: '100vh', }}
     >
       {/*//? LEFT SIDE - LOGIN FORM */}
       <Grid
@@ -36,6 +36,8 @@ const Login = () => {
           alignItems: 'center',
           justifyContent: 'center',
           p: 4,
+          paddingLeft:12,
+          
         }}
       >
         <Container maxWidth="sm">
@@ -50,7 +52,11 @@ const Login = () => {
               padding: 4,
               border: '2px solid #ccc',
               borderRadius: 4,
+              height:"28rem",
+              width:"22rem",
+             
               boxShadow: 4,
+     
             }}
           >
             <Typography variant="h4" gutterBottom>
@@ -111,7 +117,7 @@ const Login = () => {
                   backgroundImage: 'linear-gradient(45deg, #2bcbe0, #c94be1)',
                 },
               }}
-              component= {Link} to={"/"}
+              component= {Link} to={"/Home"}
             >
               Submit
             </Button>
@@ -135,17 +141,19 @@ const Login = () => {
             </Typography>
           </Box>
         </Container>
-      </Grid>
 
-      {/* //? RIGHT SIDE - IMAGE */}
-      <Grid
+
+
+   {/* //? RIGHT SIDE - IMAGE */}
+   <Grid
         columnSpan={{ xs: 12, md: 6 }}
         sx={{
           height: '100%',
           display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
+          justifyContent: 'right',
+          alignItems: 'right',
           overflow: 'hidden',
+         
         }}
       >
         <img
@@ -155,9 +163,13 @@ const Login = () => {
             width: '100%',
             height: '100%',
             objectFit: 'cover',
+            alignItems: 'right',
           }}
         />
       </Grid>
+      </Grid>
+
+   
     </Grid>
   );
 };

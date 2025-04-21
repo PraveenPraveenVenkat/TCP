@@ -9,108 +9,53 @@ import Teams from './Teams';
 import Login from './Login';
 import OurGrowth from './OurGrowth';
 import OurVision from './OurVision';
+import LinkedIN from './LinkedIN';
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#6200ea',
-    },
-    secondary: {
-      main: '#e1bee7',
-    },
-  },
-})
+
 
 // Sub-component that handles layout with conditional rendering
 function AppLayout() {
   const location = useLocation();
-  const hideHeaderOnRoutes = ['/Login'];
+  const hideHeaderOnRoutes = ['/'];
+
+  const darkTheme = createTheme({
+    palette: {
+      mode: 'dark',
+    },
+  });
 
   return (
     <>
       {/* ✅ Conditionally show Header */}
       {!hideHeaderOnRoutes.includes(location.pathname) && <Header />}
-
+     
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login/>} />
         <Route path="/Project" element={<Project />} />
         <Route path="/Teams" element={<Teams />} />
-        <Route path="/Login" element={<Login />} />
+        <Route path="/Home" element={<Home />} />
         <Route path="/OurGrowth" element={<OurGrowth />} />
         <Route path="/OurVision" element={<OurVision />} />
+        <Route path="/LinkedIn" element={<LinkedIN/>} />
+
       </Routes>
 
       {/* ✅ Always show sidebar & footer (optional to hide) */}
       <SideBar />
       <Footer />
+     
     </>
   );
 }
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
       <Router>
         <AppLayout />
       </Router>
-    </ThemeProvider>
   );
 }
 
 export default App;
-// const theme = createTheme({
 
-
-;
-
-// function App() {
-
-//   return (
-//     <>
-//       <Router>
-//       <Header />
-    
-
-//       <Routes >
-//       if(Route=== path="/Login"){
-//         <Header not to Display></Header>
-//       }
-//         <Route path="/" element={<Home />} />
-//         <Route path="/Project" element={<Project/>} />
-//         <Route path="/Teams" element={<Teams/>} />
-//         <Route path="/Login" element={<Login/>} />
-//         <Route path="/OurGrowth" element={<OurGrowth />} />
-//         <Route path="/ OurVision" element={< OurVision/>} />
-       
-        
-//       </Routes>
-
-//       {/* <FeaturePost /> */}
-//       <SideBar />
-//     </Router>
-//     <Footer/>
-    
-//     </>
-//   );
-
-// }
-
-// export default App;
-
-
-
- // const [loading,setLoading]=useState("true");
-
-
-  
-  //  fetch=("https://jsonplaceholder.typicode.com/posts");
-  //  .then((response)=>{
-  //   return response.data();
-  //  })
-  //  .then((data)=>{
-    
-  //  })
-  //  console.log(data);
-
-// https://vdigtech.com/app-development/
 
