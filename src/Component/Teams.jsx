@@ -31,20 +31,6 @@ const Teams = () => {
           <Item>size=4</Item>
         </Grid>
       </Grid>
-
-
-
-
-
-{/* <Grid
-  container
-  direction="row"
-  sx={{
-    justifyContent: "space-around",
-    alignItems: "stretch",
-  }}
-> */}
-
     </div>
 
 
@@ -54,36 +40,3 @@ const Teams = () => {
 };
 
 export default Teams;
-
-
-
-
-
-
-// import React from 'react'
-// import { Grid,Item } from '@mui/material';
-
-// const Teams = () => {
-//   return (
-//     <div>
-//       <h4>Our Teams</h4>
-    
-//      <Grid container spacing={2}>
-//   <Grid size={8}>
-//     <Item>size=8</Item>
-//   </Grid>
-//   <Grid size={4}>
-//     <Item>size=4</Item>
-//   </Grid>
-//   <Grid size={4}>
-//     <Item>size=4</Item>
-//   </Grid>
-//   <Grid size={8}>
-//     <Item>size=8</Item>
-//   </Grid>
-// </Grid> 
-//     </div>
-//   )
-// }
-
-// export default Teams;.
