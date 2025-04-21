@@ -7,7 +7,7 @@ const Footer = () => {
   return (
 
 
-    <Box sx={{ bgcolor: '#70d9e7', color: 'white', py: 5,marginTop:"12rem" }}>
+    <Box sx={{ bgcolor: '#77feb8', color: 'white', py: 5,marginTop:"12rem" }}>
       <Container maxWidth="lg">
         <Grid container spacing={4} >
           <Grid item xs={12} sm={6} md={3}>
@@ -22,10 +22,10 @@ const Footer = () => {
 
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h6" gutterBottom>Quick Links</Typography>
-            <Link href="#" color="inherit" underline="hover" display="block">Home</Link>
-            <Link href="#" color="inherit" underline="hover" display="block">Services</Link>
-            <Link href="#" color="inherit" underline="hover" display="block">Blog</Link>
-            <Link href="#" color="inherit" underline="hover" display="block">Contact</Link>
+            <Link href="#" color:black underline="hover" display="block">Home</Link>
+            <Link href="#" color:black underline="hover" display="block">Services</Link>
+            <Link href="#" color:black underline="hover" display="block">Blog</Link>
+            <Link href="#" color:black underline="hover" display="block">Contact</Link>
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>

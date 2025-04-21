@@ -32,6 +32,10 @@ const useStyles = makeStyles({
      paddingBottom:"12",
      textAlign:'center',
   alignContent:'center',
+  '&:hover': {
+    backgroundColor: '#243683',
+   
+  },
      
   },
   box: {
@@ -53,18 +57,6 @@ const useStyles = makeStyles({
     height: "8rem",
     width: "12.5rem",
   },
-  // box: {
-  //   display: 'flex',
-  //   alignItems: 'center',
-  //   border: '2px solid #ccc',
-  //   padding: 12,
-  //   height: '19rem',
-  //   paddingLeft: '5rem',
-  //   gap: '2rem', // smaller gap to keep image inside
-  //   borderRadius: 8,
-  // },
-
- 
 
 });
 
@@ -80,17 +72,6 @@ const Home = () => {
 
   return (
     <>
-  {/* <Button sx={{
-             border:2,
-         color:'black',
-         spacing:4,
-        '&:hover': {
-      backgroundColor: '#115293',
-      paddingRight:12, */}
-    {/* }, */}
-       {/* onclick={()} */}
-  {/* component={Link} to={"./Login"}  */}
-       {/* }}>LOGIN<LoginIcon/> </Button>  */}
        <Button
   sx={{
     border: 2,
@@ -102,7 +83,7 @@ const Home = () => {
     },
   }}
   component={Link}
-  to="/Home" // Make sure your route is set up like <Route path="/login" element={<LoginPage />} />
+  to="/Home" 
 >
   LOGIN <LoginIcon />
 </Button>
@@ -138,13 +119,6 @@ const Home = () => {
           </CardContent>
       
 
-      
-
-
- {/* <Typography sx={{
-        paddingLeft:'20rem',
-        gap:12,
-       }}>  */}
       <Stack direction="row" sx={{
          paddingLeft:'20rem',
          paddingTop:5,
@@ -157,7 +131,7 @@ const Home = () => {
         '&:hover': {
       backgroundColor: '#115293',
     },
-        //  :hover
+        
 
       }}>GET STARTED< TrendingFlatIcon /> </Button> 
       <Button sx={{
@@ -167,11 +141,9 @@ const Home = () => {
          '&:hover':{
           backgroundColor:'#115293',
          }
-         
-        //  :hover
 
       }}>ABOUT US< TrendingFlatIcon /> </Button> 
-         {/* </Typography> */}
+        
          
          </Stack>
 
@@ -199,48 +171,7 @@ const Home = () => {
         </Typography>
 
 
-        {/* <Grid
-      container
-      columns={12}
-      sx={{ minHeight: '100vh' }}
-    >
-      {/* LEFT SIDE - LOGIN FORM */}
-      {/* <Grid
-        columnSpan={{ xs: 12, md: 6 }}
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          p: 4,
-        }}
-      >
-        <Container maxWidth="sm">
-          <Box
-            component={Paper}
-            elevation={6}
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: 2,
-              padding: 4,
-              border: '2px solid #ccc',
-              borderRadius: 4,
-              boxShadow: 4,
-            }} */}
-          {/* >  */}
-
-          {/* <TextField
-              fullWidth
-              label="Username"
-              variant="outlined"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <PersonIcon />
-                  </InputAdornment>
-                ),
-              }}></TextField> */}
+     
               {/* //!First Grid Box */}
             
             
@@ -249,7 +180,7 @@ const Home = () => {
               
             }} spacing={2}>
       <Grid item xs={4}>
-        <Box className={classes.box} sx={{backgroundColor:"#22C23E",}}>
+        <Box className={classes.box} sx={{backgroundColor:"#77feb8",}}>
         
         <ArrowOutwardIcon  sx={{alignItems:"Left",paddingLeft:"12rem",}}/>
           <Typography variant="h6" sx={{mt:2,}}>Web Development</Typography>
@@ -344,9 +275,9 @@ const Home = () => {
          
         </Box>
       </Grid>
-
-      
     </Grid>
+
+    {/* //?Scroll  or Marque Tag*/}
    
   <Box
       sx={{
@@ -355,8 +286,9 @@ const Home = () => {
         width: "100%",
         mt:4,
         padding:5,
-        backgroundColor: "#a6d4fa",
+        backgroundColor: "#77feb8",
         gap:6,
+        color:"black"
       }}
     >
       <Typography
@@ -371,7 +303,6 @@ const Home = () => {
         
         <AutoAwesomeIcon sx={{gap:6,}}/>
       Creative People
- 
       <AutoAwesomeIcon sx={{gap:6,}}/>
       Good Reviews
       <AutoAwesomeIcon sx={{gap:6,}}/>
@@ -381,9 +312,6 @@ const Home = () => {
 
       </Typography>
     </Box>
-          {/*<ExpandLess></ExpandLess>*/}
-
-
           <Grid container spacing={2} sx={{
             paddingLeft:"20rem",
             paddingTop:"10rem",
@@ -493,13 +421,9 @@ Optimizing the website with special strategies by covering all its needs
             E-commerce Integration
             </Typography>
 
-            <Typography variant='p' sx={{paddingTop:"12rem",}}>
+            <Typography variant='p' sx={{paddingTop:'12rem',}}>
             Specializing the website with unique E-commerce features <br/>integration to develop a user-centric web page.
             </Typography>
-           
-        {/* <Expantless :Expantmore></Expantless :Expantmore> */}
-
-        
         {/* {open ? <ExpandLess /> : <ExpandMore />} */}
               <Typography > 
                WHICH TYPE OF E-COMMERCE WEBSITES HAVE YOU DEVELOPED IN THE PAST?   <ArrowForwardIcon sx={{paddingLeft:2,paddingTop:2,}} onclick={()=>handleclick(ListItemText)}/>

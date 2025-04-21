@@ -183,115 +183,13 @@ export default Login;
 
 
 
-//    {/* <Grid container> */}
-//     <Grid item md={2}>
-//       <Paper>
-//      <Container maxWidth="sm"  sx={{mt:8,
-//       mx:2,
-//      }}>
-//         <Box
-//   sx={{
-//     display: 'flex',
-//     flexDirection: 'column',
-//     alignItems: 'center',
-//     gap: 2,
-//     padding: { xs: 4, sm: 6, md: 8, lg: 12 }, 
-//     border: '2px solid #ccc',
-//     borderRadius: 12,
-//     boxShadow: 24,
-    
-//   }}
-// >
 
 
 
 
-//          <Typography variant="h4" gutterBottom>
-//              Login
-//           </Typography>
 
 
 
-//           <TextField
-//               fullWidth
-//               label="Username"
-//               variant="outlined"
-//               InputProps={{
-//                 startAdornment: (
-//                   <InputAdornment position="start">
-//                     <PersonIcon />
-//                   </InputAdornment>
-//                 ),
-//               }}
-//               sx={{ borderRadius: 12 }}
-//             />
-
-
-
-//           <TextField
-//               fullWidth
-//               label="Password"
-//               type="password"
-//               variant="outlined"
-//               InputProps={{
-//                 startAdornment: (
-//                   <InputAdornment position="start">
-//                     <LockOutlineIcon />
-//                   </InputAdornment>
-//                 ),
-//                 endAdornment: (
-//                   <InputAdornment position="end">
-//                     <IconButton>
-//                       <VisibilityIcon />
-//                     </IconButton>
-//                   </InputAdornment>
-//                 ),
-//               }}
-//             />
-
-//           {/* <TextField 
-//            fullWidth
-//            label="username"
-//            variant="outlined"
-//           //  <PersonIcon/>
-//            sx={{ borderRadius:12,
-           
-//            }} 
-//            /> */}
-//      {/* <TextField
-//            fullWidth
-//            label="Password"
-//            type="password"
-//            variant="outlined"
-//           //  <LockOutlineIcon/>
-//           // <VisibilityIcon/>
-//            /> */}
-//       <Button sx={{
-//         paddingTop:3,
-//         color:'black',
-//         marginLeft:19,
-//         paddingBottom:3,
-        
-//       }}>forgot password?</Button>
-    
-// {/* 
-//     <Button
-//     sx={{
-//       backgroundColor: blue[500],
-//       ':hover': {
-//         backgroundColor: blue[700],
-//         },
-//         color: 'white',
-//         borderRadius: 36,
-//         width: {
-//           xs: '100%',    // full width on mobile
-//           sm: '300',       // smaller width on tablets
-//           md: '400',       // full size on desktop
-//           },
-//           }}
-//           >
-//           Submit
-//           </Button> */}
 // <Button
 //   sx={{
 //     backgroundImage: 'linear-gradient(45deg, #33eaff, #e666fb)',

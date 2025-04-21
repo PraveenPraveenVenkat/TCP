@@ -15,24 +15,8 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import { Divider } from '@mui/material';
 import { Link } from 'react-router-dom';
 import SideBar from './SideBar';
-
-
-
-// import { makeStyles } from '@material-ui/core/styles'; // v4
-
-// const useStyles = makeStyles((theme) => ({
-//   title: {
-//     flexGrow: 1,
-//   },
-//   tagline: {
-//     fontSize: 20,
-//   },
-// }));
-
-
 
 
 
@@ -41,9 +25,9 @@ import SideBar from './SideBar';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  backgroundColor: alpha('#77feb8', 0.15),
   '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
+    backgroundColor: alpha('#77feb8', 0.25),
   },
   marginRight: theme.spacing(2),
   marginLeft: 0,
@@ -63,6 +47,9 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  '&: hover':{
+    backgroundColor: '#77feb8',
+  },
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -182,7 +169,8 @@ export default function PrimarySearchAppBar() {
   return (
     <>
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <AppBar position="static" sx={{ backgroundColor: '#77feb8' }}>
+
         <Toolbar>
 
         <SideBar>

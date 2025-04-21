@@ -13,7 +13,6 @@ import LinkedIN from './LinkedIN';
 
 
 
-// Sub-component that handles layout with conditional rendering
 function AppLayout() {
   const location = useLocation();
   const hideHeaderOnRoutes = ['/'];
@@ -40,7 +39,7 @@ function AppLayout() {
 
       </Routes>
 
-      {/* ✅ Always show sidebar & footer (optional to hide) */}
+      
       <SideBar />
       <Footer />
      
@@ -57,5 +56,8 @@ function App() {
 }
 
 export default App;
+
+
+// https://vdigtech.com/app-development/
 
 
