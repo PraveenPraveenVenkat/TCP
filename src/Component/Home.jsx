@@ -72,21 +72,7 @@ const Home = () => {
 
   return (
     <>
-       <Button
-  sx={{
-    border: 2,
-    color: 'black',
-    spacing: 4,
-    '&:hover': {
-      backgroundColor: '#115293',
-      paddingRight: 12,
-    },
-  }}
-  component={Link}
-  to="/Home" 
->
-  LOGIN <LoginIcon />
-</Button>
+
     
 {/* padding: { xs: 4, sm: 6, md: 8, lg: 12 }, */}
       <CardContent>
@@ -129,7 +115,7 @@ const Home = () => {
          color:'white',
          spacing:4,
         '&:hover': {
-      backgroundColor: '#115293',
+      backgroundColor: '#77feb8',
     },
         
 
@@ -139,7 +125,7 @@ const Home = () => {
          color:'white',
          spacing:2,
          '&:hover':{
-          backgroundColor:'#115293',
+          backgroundColor:'#77feb8',
          }
 
       }}>ABOUT US< TrendingFlatIcon /> </Button> 

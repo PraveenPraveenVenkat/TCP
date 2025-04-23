@@ -1,0 +1,283 @@
+
+import {
+    Container,
+    Typography,
+    Button,
+    Box,
+    TextField,
+    InputAdornment,
+  } from '@mui/material';
+  import PersonIcon from '@mui/icons-material/Person';
+  import MailOutlineIcon from '@mui/icons-material/MailOutline';
+  import HttpsIcon from '@mui/icons-material/Https';
+  import React from 'react';
+  
+  const SignIn = () => {
+    return (
+      <Box sx={{ minHeight: '80vh', display: 'flex', alignItems: 'center' }}>
+        <Container maxWidth="lg">
+                <Typography variant="h2" align="center" gutterBottom>
+           Sign In
+         </Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              height: '500px',
+              boxShadow: 3,
+              borderRadius: 2,
+              overflow: 'hidden',
+            }}
+          >
+            {/* Left Side */}
+            <Box
+              sx={{
+                width: '50%',
+                backgroundColor: '#77feb8',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+              }}
+            >
+              <Typography variant="h3" sx={{ fontWeight: 'bold' }}>
+                Welcome To TCP
+              </Typography>
+            </Box>
+  
+            {/* Right Side */}
+            <Box
+              sx={{
+                width: '50%',
+                backgroundColor: '#fff',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                padding: 4,
+              }}
+            >
+              <Typography variant="h5" align="center" color='secondary' gutterBottom>
+                Welcome User
+              </Typography>
+  
+              <TextField
+                variant="outlined"
+                label="Name"
+                fullWidth
+                margin="normal"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <PersonIcon />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              <TextField
+                variant="outlined"
+                label="Email"
+                fullWidth
+                margin="normal"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <MailOutlineIcon />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              <TextField
+                variant="outlined"
+                label="Password"
+                fullWidth
+                margin="normal"
+                type="password"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <HttpsIcon />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              <Button variant="contained" sx={{width:'12rem',marginLeft:20, marginTop:12,borderRadius:2,}}>Contained</Button>
+            </Box>
+          </Box>
+        </Container>
+      </Box>
+    );
+  };
+  
+  export default SignIn;
+  
+// import {
+//     Container,
+//     Typography,
+//     Grid,
+//     Box,
+//     TextField,
+//     InputAdornment,
+//   } from '@mui/material';
+//   import PersonIcon from '@mui/icons-material/Person';
+//   import MailOutlineIcon from '@mui/icons-material/MailOutline';
+//   import HttpsIcon from '@mui/icons-material/Https';
+//   import React from 'react';
+  
+//   const SignIn = () => {
+//     return (
+//       <Container maxWidth="md" sx={{ paddingTop: 5 }}>
+//         <Typography variant="h2" align="center" gutterBottom>
+//           Sign In
+//         </Typography>
+  
+//         <Box
+//           sx={{
+//             backgroundColor: 'white',
+//             minHeight: '35rem',
+//             color: 'black',
+//             display: 'flex',
+//           }}
+//         >
+//           {/* Left Side */}
+//           <Grid
+//             item
+//             xs={6}
+//             sx={{
+//               backgroundColor: '#77feb8',
+//               display: 'flex',
+//               alignItems: 'center',
+//               justifyContent: 'center',
+//               textAlign: 'center',
+//             }}
+//           >
+//             <Typography variant="h3">Welcome To TCP</Typography>
+//           </Grid>
+  
+//           {/* Right Side */}
+//           <Grid
+//             item
+//             xs={6}
+//             sx={{
+//               display: 'flex',
+//               flexDirection: 'column',
+//               justifyContent: 'center',
+//               padding: 4,
+//             }}
+//           >
+//              <Typography variant="h6" sx={{alignContent:'center'}}>Welcome User</Typography>
+//             <Box>
+//               <TextField
+//                 variant="outlined"
+//                 label="Name"
+//                 fullWidth
+//                 margin="normal"
+//                 InputProps={{
+//                   startAdornment: (
+//                     <InputAdornment position="start">
+//                       <PersonIcon />
+//                     </InputAdornment>
+//                   ),
+//                 }}
+//               />
+//                 <TextField
+//                 variant="outlined"
+//                 label=" Email"
+//                 fullWidth
+//                 margin="normal"
+//                 InputProps={{
+//                   startAdornment: (
+//                     <InputAdornment position="start">
+//                       < MailOutlineIcon/>
+//                     </InputAdornment>
+//                   ),
+//                 }}
+//               />
+//                   <TextField
+//                 variant="outlined"
+//                 label=" Password"
+//                 fullWidth
+//                 margin="normal"
+//                 InputProps={{
+//                   startAdornment: (
+//                     <InputAdornment position="start">
+//                       <HttpsIcon/>
+//                     </InputAdornment>
+//                   ),
+//                 }}
+//               />
+              
+  
+//               {/* You can add more fields like Last Name, Email, Password, etc. */}
+//             </Box>
+//           </Grid>
+//         </Box>
+//       </Container>
+//     );
+//   };
+  
+//   export default SignIn;
+  
+// import { Container, Typography,Grid,Box,TextField,InputAdornment } from '@mui/material'
+// import PersonIcon from '@mui/icons-material/Person';
+
+// import React from 'react'
+
+// const SignIn = () => {
+//   return (
+//     <>
+//      <Container sx={{
+//             paddingTop:12,
+//         }}>
+//             <Typography variant='h2'>Sign In</Typography>
+//         <Box sx={{
+//             backgroundColor:'white',
+//             height:'35rem',
+//             color:'black',
+//             paddingTop:12,
+//         }}>
+//              <Grid item
+//         sx={{
+//             width:'50%',
+//             backgroundColor:'#77feb8',
+//             textAlign:'center',
+//             height:'58.3vh',
+//             }}>
+//         <Typography varient="h2" >Welcome To TCP</Typography>
+//         </Grid>
+
+// <Grid item>
+
+// <Box sx={{
+//             width:'-50%',
+
+//             textAlign:'center',
+//             height:'58.3vh',
+//             }}>
+//         <TextField
+//        sx={{color:'black',backgroundColor:"white"}}
+//   variant="outlined"
+//   label="Enter Your First Name"
+//   fullWidth
+//   InputProps={{
+//     startAdornment: (
+//       <InputAdornment position="start">
+//         <PersonIcon />
+//       </InputAdornment>
+//     ),
+//   }}
+// />        </Box>
+
+
+// </Grid>
+   
+//         <Grid>
+
+//         </Grid>
+//        </Box>
+       
+//      </Container>
+//     </>
+    
+//   )
+// }
+
+// export default SignIn

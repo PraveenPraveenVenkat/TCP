@@ -1,15 +1,54 @@
 import React from 'react';
-import { Box, Container, Grid, Typography, Link, IconButton } from '@mui/material';
-import { Facebook, Twitter, Instagram, LinkedIn } from '@mui/icons-material';
-
+import { Box, Typography } from '@mui/material';
 
 const Footer = () => {
   return (
+    <Box
+      sx={{
+        position: 'fixed',
+        bottom: 0,
+        width: '100%',
+        textAlign: 'center',
+        bgcolor: '#77feb8',
+        color: 'white',
+        py: 2, // Adjusted for better spacing
+        zIndex: 1300, // Ensure it stays on top
+      }}
+    >
+      <Typography variant="body2" color="error">
+        © Copyrights - All Rights Reserved. {new Date().getFullYear()}
+      </Typography>
+    </Box>
+  );
+};
+
+export default Footer;
+
+// import React from 'react';
+// import { Box,  Typography, } from '@mui/material';
 
 
-    <Box sx={{ bgcolor: '#77feb8', color: 'white', py: 5,marginTop:"12rem" }}>
-      <Container maxWidth="lg">
-        <Grid container spacing={4} >
+// const Footer = () => {
+//   return (
+
+
+//     <Box sx={{  textAlign:"center" ,bgcolor: '#77feb8', color: 'white', py: 5, }}>
+       
+//           <Typography variant="body2" color="error" sx={{
+//           height:'0.23rem',
+//         }}>
+//             © Copyrights - All Rights Reserved. {new Date().getFullYear()} 
+//           </Typography>
+  
+
+//     </Box>
+//   );
+// };
+
+// export default Footer;
+
+      {/* <Container maxWidth="lg"> */}
+        {/* <Grid container spacing={4} >
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h6" sx={{
                 marginLeft:0 ,gap:12,
@@ -18,17 +57,17 @@ const Footer = () => {
             <Typography variant="body2">
               We are a team of passionate developers building  web apps with React and MUI.
             </Typography>
-          </Grid>
-
+          </Grid> */}
+{/* 
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h6" gutterBottom>Quick Links</Typography>
             <Link href="#" color:black underline="hover" display="block">Home</Link>
             <Link href="#" color:black underline="hover" display="block">Services</Link>
             <Link href="#" color:black underline="hover" display="block">Blog</Link>
             <Link href="#" color:black underline="hover" display="block">Contact</Link>
-          </Grid>
+          </Grid> */}
 
-          <Grid item xs={12} sm={6} md={3}>
+          {/* <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h6" gutterBottom>Contact</Typography>
             <Typography variant="body2">Email: contact@example.com</Typography>
             <Typography variant="body2">Phone: +1 (555) 123-4567</Typography>
@@ -45,16 +84,8 @@ const Footer = () => {
               <IconButton href="#" color="inherit"><LinkedIn /></IconButton>
             </Box>
           </Grid>
-        </Grid>
+        </Grid> */}
+          {/* <Box textAlign="center" pt={5} > */}
 
-        <Box textAlign="center" pt={5}>
-          <Typography variant="body2" color="inherit">
-            © {new Date().getFullYear()} YourCompany. All rights reserved.
-          </Typography>
-        </Box>
-      </Container>
-    </Box>
-  );
-};
-
-export default Footer;
+     {/* </Box> */}
+      {/* </Container> */}

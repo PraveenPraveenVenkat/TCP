@@ -1,5 +1,6 @@
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 import Header from './Header';
 import SideBar from './SideBar';
 import Footer from './Footer';
@@ -10,12 +11,16 @@ import Login from './Login';
 import OurGrowth from './OurGrowth';
 import OurVision from './OurVision';
 import LinkedIN from './LinkedIN';
+import Website from './Website';
+import SignIn from './SignIn';
 
 
 
 function AppLayout() {
   const location = useLocation();
-  const hideHeaderOnRoutes = ['/'];
+  const hideHeaderOnRoutes = ['/','/SignIn','/Footer'];
+  const hide = ['/'];
+  const notify = () => toast("Wow so easy!");
 
   const darkTheme = createTheme({
     palette: {
@@ -27,7 +32,11 @@ function AppLayout() {
     <>
       {/* ✅ Conditionally show Header */}
       {!hideHeaderOnRoutes.includes(location.pathname) && <Header />}
-     
+      {!hide.includes(location.pathname) && <Footer />}
+      <div>
+        <button onClick={notify}>Notify!</button>
+        <ToastContainer />
+      </div>
       <Routes>
         <Route path="/" element={<Login/>} />
         <Route path="/Project" element={<Project />} />
@@ -36,6 +45,8 @@ function AppLayout() {
         <Route path="/OurGrowth" element={<OurGrowth />} />
         <Route path="/OurVision" element={<OurVision />} />
         <Route path="/LinkedIn" element={<LinkedIN/>} />
+        <Route path="/ Website" element={< Website/>} />
+        <Route path="/SignIn" element={< SignIn/>} />
 
       </Routes>
 
@@ -48,6 +59,7 @@ function AppLayout() {
 }
 
 function App() {
+
   return (
       <Router>
         <AppLayout />

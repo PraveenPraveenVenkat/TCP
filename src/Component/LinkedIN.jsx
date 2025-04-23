@@ -1,53 +1,257 @@
-import { Typography, Box, Grid } from '@mui/material';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import MailIcon from '@mui/icons-material/Mail';
-import CallIcon from '@mui/icons-material/Call';
 import React from 'react';
+import {
+  Container,
+  Box,
+  Grid,
+  TextField,
+  Typography,
+  Button,
+  InputAdornment,
+} from '@mui/material';
+import MailOutlineTwoToneIcon from '@mui/icons-material/MailOutlineTwoTone';
+import PhoneTwoToneIcon from '@mui/icons-material/PhoneTwoTone';
+import MailRoundedIcon from '@mui/icons-material/MailRounded';
+import PersonIcon from '@mui/icons-material/Person';
 
 const LinkedIN = () => {
   return (
-    <>
-    
-    {/* <img style={{width:"100rem", height:"30%",}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc8SKpaoBT9EWK5cjkiXwD5BqMmHEVqwGnysRb5n8nr1dNDh4ANNV1uP4rjGjjakloPnQ&usqp=CAU"    alt="" /> */}
-    <Grid item xs={2}>
-     <Grid>
-  <Box sx={{ paddingTop: '12rem', paddingLeft: '14rem' }}>
-      <Typography variant="h2" sx={{ fontSize: '3rem' }}>
-        Get in Touch with <br /> TCP International 👋
-      </Typography>
+    <Container sx={{
+      paddingTop:12,
+      alignItems:'center',
+    }}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: 2,
+          padding: 4,
+          border: '2px solid #ccc',
+          borderRadius: 4,
+          height: '40rem',
+          width: '60rem',
+          backgroundColor: 'white',
+          boxShadow: 4,
+        }}
+      >
+        <Grid container direction="column" spacing={2}>
+          {/* Contact Header */}
+          <Grid item>
+            <Box
+              sx={{
+                backgroundColor:' #4083ca',
+                height: '6rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: 900,
+                borderRadius: 4,
+              }}
+            >
+              <Typography
+                variant="body1"
+                sx={{ color: 'white', display: 'flex', alignItems: 'center',gap:2, }}
+              >
+                <MailRoundedIcon/>
+                support@tcp.com
+              </Typography>
+            </Box>
+          </Grid>
 
-      <Typography variant="body1" sx={{ marginTop: '1rem', maxWidth: '600px' }}>
-        Feel free to connect with us for any of your needs regarding our <br />
-        services. Our support team is ready to solve any of your issues. <br />
-        Just push a text to us and we will get back to you immediately.
-      </Typography>
-    </Box>
-    </Grid>
-    
-        
-    </Grid>
-    <Grid>
-   
-        <Box>
-            <Typography>
-                Drop Us a Message
-            </Typography>
-        </Box>
-    </Grid>
+          {/* First & Last Name */}
+          <Grid item>
+            <Box
+              sx={{
+                display: 'flex',
+                gap: 2,
+                paddingTop:4,
+                borderRadius:'12rem',
+              }}
+            >
+              <TextField
+  variant="outlined"
+  label="Enter Your First Name"
+  fullWidth
+  InputProps={{
+    startAdornment: (
+      <InputAdornment position="start">
+        <PersonIcon />
+      </InputAdornment>
+    ),
+  }}
+/>
+              <TextField
+                variant="outlined"
+                label="Enter Your Last Name"
+                fullWidth
+                InputProps={{
+                  startAdornment:(
+                    <InputAdornment position='start'>
+                    <PersonIcon />
+                    </InputAdornment>
+                  )
+                }}
+              />
+            </Box>
+          </Grid>
 
-    <Typography variant="body1" sx={{marginLeft:"14rem", marginTop: '1rem', fontSize: '1.3rem'}} >
-  <LocationOnIcon sx={{marginTop:"2",}}/> Bhubaneswar, Odisha 751024<br />
-  < MailIcon sx={{paddingTop:"2",}}/>info@TCP.com<br />
-  < CallIcon sx={{paddingTop:"2",}}/> +91 7008166042<br />
-
-
-    </Typography>
-    </>
-  
-
-
+          {/* Email, Contact, Message – Stacked */}
+          <Grid item>
+            <Box
+            
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 2,
+                width: 900,
+                borderRadius: 4,
+               
+              }}
+            >
+              <TextField
+                variant="outlined"
+                label="Enter Your Email Address"
+                fullWidth
+                InputProps={{
+                  startAdornment:(
+                    <InputAdornment>
+                    <MailOutlineTwoToneIcon/>
+                    </InputAdornment>
+                  )
+                }}
+              />
+           
+              <TextField
+                variant="outlined"
+                label="Contact Number"
+                fullWidth
+                InputProps={{
+                  startAdornment:(
+                    <InputAdornment>
+                     <  PhoneTwoToneIcon/>
+                    </InputAdornment>
+                  )
+                }}
+              />
+              <TextField
+                variant="outlined"
+                label="Message"
+                multiline
+                rows={4}
+                fullWidth
+               
+              />
+              <Button variant="contained" sx={{width:'12rem',borderRadius:12,height:40}}>
+                Send Message
+              </Button>
+            </Box>
+          </Grid>
+        </Grid>
+      </Box>
+    </Container>
   );
 };
 
 export default LinkedIN;
 
+
+// import React from 'react';
+// import { Container, Box,Grid, TextField, Typography, Button } from '@mui/material';
+// import MailIcon from '@mui/icons-material/Mail';
+// import PersonIcon from '@mui/icons-material/Person';
+
+// const LinkedIN = () => {
+//   return (
+   
+//       <Container >
+        
+//         <Box
+//           // spacing={{ xs: 1, sm: 2 }}
+//           direction="row"
+//           useFlexGap
+//           // sx={{display:'flex',padding:40,backgroundColor:'white' }}
+//           sx={{
+//           display: 'flex',
+//           flexDirection: 'column',
+//           alignItems: 'center',
+//           gap: 2,
+//           padding: 4,
+//           border: '2px solid #ccc',
+//           borderRadius: 4,
+//           height:"38rem",
+//           width:"50rem",
+//           backgroundColor:'white', 
+//           boxShadow: 4, }}
+//         >
+//           <Grid>
+
+      
+//           <Grid> 
+//             <Box sx={{backgroundColor:'blue',
+//             height:'3rem',
+//             paddingTop:2,
+//             width:600,
+//             alignItems:'center',
+//             borderRadius:4,
+//             }}>
+
+            
+//           <Typography variant='p' sx={{backgroundColor:'blue',
+//             height:'24rem',
+//             paddingTop:2,
+//             fullWidth
+//           }}><MailIcon sx={{alignItems:'center',}}/>
+//                support@tcp.com
+//           </Typography>
+//           </Box>
+//           </Grid>  
+
+//           <Grid spacing={2}  sx={{borderRadius:'14rem',gap:'12',}}>
+
+
+//             <Box>
+
+//         <TextField variant='outlined' label="Enter Your First Name" sx={{borderRadius:'14rem',gap:22,}}>
+//           <PersonIcon />
+
+
+//         </TextField>
+//         <TextField variant='outlined' label="Enter Your Last Name" sx={{ borderRadius:14,}}>
+
+
+//           </TextField>
+//           </Box>
+         
+//         </Grid>
+   
+//         </Grid>
+
+//         <Box sx={{
+//             height:'3rem',
+//             paddingTop:2,
+//             width:600,
+//             alignItems:'left',
+//             borderRadius:4,
+//             }}>
+
+          
+//         <TextField variant='outlined' label="Enter Your Email Address" sx={{ borderRadius:14,}}>
+// </TextField>
+
+//         <TextField variant='outlined' label="Contact Number" sx={{ borderRadius:14,}}>
+// </TextField>
+
+// <TextField variant='outlined' label="Message" sx={{ borderRadius:14,}}>
+// </TextField>
+// <Button variant="contained">Contained</Button>
+// </Box>
+//         </Box>
+        
+//       </Container>
+
+
+
+//   );
+// };
+
+// export default LinkedIN;
