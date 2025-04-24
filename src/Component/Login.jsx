@@ -5,6 +5,7 @@ import {
   TextField, InputAdornment, IconButton, Button
 } from '@mui/material';
 import { toast, Bounce } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 import PersonIcon from '@mui/icons-material/Person';
 import LockOutlineIcon from '@mui/icons-material/LockOutlined';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -13,14 +14,16 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import GoogleIcon from '@mui/icons-material/Google';
 import { Link } from 'react-router-dom';
 import { blue } from '@mui/material/colors';
+// import logo from 'logo.png'
 
 
 const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleClick = () => {
-    if (username === 'admin') {
+    if (username === 'admin'  && password === 'admin') {
       toast.success('🦄 Thanks For Login', {
         position: "top-right",
         autoClose: 5000,
@@ -32,8 +35,12 @@ const Login = () => {
         theme: "light",
         transition: Bounce,
       });
-    } else if (username === ''){
-      toast.warn('Enter a Valid Name', {
+      setTimeout(() => {
+        navigate('/Home');
+      }, 1000);
+
+    } else if (username  === 'admin' && password !== 'admin'){
+      toast.warn('Enter a Valid Password', {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -45,8 +52,22 @@ const Login = () => {
         transition: Bounce,
         });
         
-    }else {
-      toast.error('Sorry', {
+    }else if (username  !== 'admin' && password === 'admin'){
+      toast.warn('Enter a Valid User Name', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
+        
+    }
+    else {
+      toast.error('Fill  the form', {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -60,10 +81,20 @@ const Login = () => {
     }
   };
 
+  
+  // padding: { xs: 1, sm: 6, md: 8, lg: 12, xl:14 },
+    // Mobile:0,table:768,laptop:1024:desktop:1200
+    
+
   return (
-    <Grid container sx={{ minHeight: '100vh', backgroundColor: 'white' }}>
+    <Grid container sx={{ minHeight: '100vh', backgroundColor: 'white', }}>
       {/* Left: Login Form */}
-      <Grid item xs={12} md={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', px: { xs: 2, sm: 4, md: 6 }, py: 4 }}>
+      <Grid item xs={12} md={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', py: 4,   p: {
+      xs: 1,     // smaller padding on extra small screens
+      sm: 4,
+      md: 6,     // default padding on medium and up
+    }, }}>
+      {/* <img src='./logo.png' */}
         <Container maxWidth="sm">
           <Box component={Paper} elevation={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, p: 4, borderRadius: 4, width: '100%', maxWidth: 400, backgroundColor: 'white' }}>
             <Typography variant="h4" gutterBottom>Login</Typography>
@@ -121,8 +152,8 @@ const Login = () => {
                 },
               }}
               onClick={handleClick}
-              component={Link}
-              to="/Home"
+              // component={Link}
+              // to="/Home"
             >
               Submit
             </Button>
@@ -133,15 +164,25 @@ const Login = () => {
               <GoogleIcon />
             </Typography>
 
-            <Button sx={{ mt: 3 }} variant="contained" component={Link} to="/SignIn">
+            <Grid item>
+            <Typography varient="p" sx={{pt:4,}}>
+            Dont' have Account   <Button sx={{ mt: 3 }} variant="outlined" component={Link} to="/SignIn">
               SignIn
             </Button>
+           
+            </Typography>
+            </Grid>
+           
+          
           </Box>
         </Container>
               {/* Right: Image */}
       <Grid item xs={12} md={6} sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
         <img
-          src="https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg"
+          // src="https://images.pexels.com/photos/936722/pexels-photo-936722.jpeg?auto=compress&cs=tinysrgb&w=600"
+          // src='https://images.pexels.com/photos/2129796/pexels-photo-2129796.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+          // src='https://images.pexels.com/photos/219692/pexels-photo-219692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+          src='https://images.pexels.com/photos/325193/pexels-photo-325193.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
           alt="Login Visual"
           style={{ width: '100%', height: '100vh', objectFit: 'cover' }}
         />
@@ -151,6 +192,7 @@ const Login = () => {
   
     </Grid>
   );
+  
 };
 
 export default Login;

@@ -1,4 +1,4 @@
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, } from '@mui/material/styles';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import Header from './Header';
@@ -30,13 +30,15 @@ function AppLayout() {
 
   return (
     <>
+    
       {/* ✅ Conditionally show Header */}
       {!hideHeaderOnRoutes.includes(location.pathname) && <Header />}
       {!hideFoter.includes(location.pathname) && <Footer />}
-      <div>
-        <button onClick={notify}>Notify!</button>
+      
+      {/* <div>
+        <button onClick={notify}>Notify!</button> */}
         <ToastContainer />
-      </div>
+      {/* </div> */}
       <Routes>
         <Route path="/" element={<Login/>} />
         <Route path="/Project" element={<Project />} />

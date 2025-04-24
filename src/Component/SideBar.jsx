@@ -22,9 +22,6 @@ function SideBar({ children }) {
     }
     setState({ ...state, [anchor]: open });
   };
-
-
- 
   const handleToggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
@@ -61,41 +58,11 @@ function SideBar({ children }) {
           </div>
         ))}
       </List>
-
-
       <Divider />
-
-{/* 
-      <LIST>
-        {Data.map((item,index)=>(
-          <ListItem>
-            <ListItemButton>
-              <ListItemIcon>{item.title}</ListItemIcon>
-            </ListItemButton>
-
-          </ListItem>
-
-        ))}
-      </LIST> */}
-
-      {/* <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List> */}
     </Box>
   );
 
-  return (
-    
-    
+  return (  
     <div>
       <div onClick={toggleDrawer("left", true)}>{children}</div>
       <Drawer anchor="left" open={state.left} onClose={toggleDrawer("left", false)}>

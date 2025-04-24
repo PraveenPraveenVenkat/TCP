@@ -37,6 +37,7 @@ const Search = styled('div')(({ theme }) => ({
     marginLeft: theme.spacing(3),
     width: 'auto',
   },
+  
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -47,13 +48,15 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  color:'black',
   '&: hover':{
     backgroundColor: '#77feb8',
   },
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
+  // color: 'inherit',
+  color:'black',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
@@ -97,6 +100,7 @@ export default function PrimarySearchAppBar() {
       anchorOrigin={{
         vertical: 'top',
         horizontal: 'right',
+        
       }}
       id={menuId}
       keepMounted
@@ -146,7 +150,7 @@ export default function PrimarySearchAppBar() {
           color="inherit"
         >
           <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
+            <NotificationsIcon sx={{}}/>
           </Badge>
         </IconButton>
         <p>Notifications</p>
@@ -180,7 +184,7 @@ export default function PrimarySearchAppBar() {
             edge="start"
             color="secondary"
             aria-label="open drawer"
-            sx={{ mr: 2 }}
+            sx={{ mr: 2,color:'black', }}
           >
             <MenuIcon />
             </IconButton>
@@ -192,7 +196,7 @@ export default function PrimarySearchAppBar() {
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
+            sx={{ display: { xs: 'none', sm: 'block',color:'black', } }}
           >
             TCP
           </Typography>
@@ -209,7 +213,7 @@ export default function PrimarySearchAppBar() {
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">
-                <MailIcon />
+                <MailIcon  sx={{ color:'black', }} />
               </Badge>
             </IconButton>
             <IconButton
@@ -218,7 +222,7 @@ export default function PrimarySearchAppBar() {
               color="inherit"
             >
               <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
+                <NotificationsIcon sx={{ color:'black', }}/>
               </Badge>
             </IconButton>
             <IconButton
@@ -230,7 +234,7 @@ export default function PrimarySearchAppBar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              <AccountCircle sx={{ color:'black', }}/>
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>

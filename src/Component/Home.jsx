@@ -3,11 +3,10 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import LoginIcon from '@mui/icons-material/Login';
 import { makeStyles } from '@mui/styles';
-import { Link } from 'react-router-dom';
 import AppShortcutIcon from '@mui/icons-material/AppShortcut';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-import React from 'react';
+import {useState} from 'react';
 import { keyframes } from "@emotion/react";
 
 
@@ -33,7 +32,7 @@ const useStyles = makeStyles({
      textAlign:'center',
   alignContent:'center',
   '&:hover': {
-    backgroundColor: '#243683',
+    backgroundColor: '#77feb8',
    
   },
      
@@ -66,19 +65,26 @@ const Home = () => {
   0%{transform:translateX(100%);}
   100{transform:translateX)(-100%);}
   `;
-  const handleclick =(ListItemText)=>{
+  // const handleclick =(ListItemText)=>{
     // setOpenIndex(openIndex === index ? null :index);
-  }
+  // }
+  const [openSection, setOpenSection] = useState(null);
+  const handleClick = (section) => {
+    setOpenSection(prev => (prev === section ? null : section)); // toggle
+  };
+
+ 
 
   return (
     <>
 
     
-{/* padding: { xs: 4, sm: 6, md: 8, lg: 12 }, */}
+
       <CardContent>
       
         <Typography variant="h1" sx={{
-          fontSize:'5.5rem',paddingLeft:'18rem'
+          fontSize:'5.5rem',paddingLeft:'18rem',paddingTop:12,
+          // padding: { xs: 1, sm: 6, md: 8, lg: 12, xl:14 },
         }} >
           Best <br /> Place for Creative <br /> Digital Solution
         </Typography>
@@ -89,9 +95,10 @@ const Home = () => {
           sx={{
             
             marginRight: 11,
-            paddingLeft:'20rem',
+            paddingLeft:'18.5rem',
             paddingTop:6,
             fontSize: '1.5rem',
+            
           }}
         >
           Unlock the Power of Web Presence with our <br />
@@ -106,7 +113,7 @@ const Home = () => {
       
 
       <Stack direction="row" sx={{
-         paddingLeft:'20rem',
+         paddingLeft:'19.5rem',
          paddingTop:5,
       }} gap={12}>
       
@@ -114,8 +121,11 @@ const Home = () => {
              border:2,
          color:'white',
          spacing:4,
+         height:55,
+         width:'10rem',
         '&:hover': {
       backgroundColor: '#77feb8',
+      color:'black'
     },
         
 
@@ -123,9 +133,12 @@ const Home = () => {
       <Button sx={{
              border:2,
          color:'white',
-         spacing:2,
+         spacing:4,
+         height:55,
+         width:'10rem',
          '&:hover':{
           backgroundColor:'#77feb8',
+           color:'black'
          }
 
       }}>ABOUT US< TrendingFlatIcon /> </Button> 
@@ -168,8 +181,8 @@ const Home = () => {
       <Grid item xs={4}>
         <Box className={classes.box} sx={{backgroundColor:"#77feb8",}}>
         
-        <ArrowOutwardIcon  sx={{alignItems:"Left",paddingLeft:"12rem",}}/>
-          <Typography variant="h6" sx={{mt:2,}}>Web Development</Typography>
+        <ArrowOutwardIcon  sx={{alignItems:"Left",paddingLeft:"12rem",color:'black'}}/>
+          <Typography variant="h6" sx={{mt:2,color:'black',}}>Web Development</Typography>
           
           <img
             src='https://vdigtech.com/wp-content/uploads/2024/03/Image-20.jpg'
@@ -263,7 +276,7 @@ const Home = () => {
       </Grid>
     </Grid>
 
-    {/* //?Scroll  or Marque Tag*/}
+                     {/* //?Scroll  or Marque Tag*/}
    
   <Box
       sx={{
@@ -360,7 +373,7 @@ const Home = () => {
             </Grid>
                   {/* //?Container 2 */}
             <Grid item xs={3}>
-                <Box sx={{backgroundColor:"#22C23E",height:'15rem',width:'17rem',}}>
+                <Box sx={{backgroundColor:"#77feb8",height:'15rem',width:'17rem', color:'black'}}>
                   <Typography variant='p'>
                   Step 02
                   </Typography>
@@ -395,52 +408,162 @@ Optimizing the website with special strategies by covering all its needs
             </Grid>
             
             </Grid>
-              
+            {/* '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"', */}
 
 
 
-          <Box sx={{
-            paddingLeft:"20rem",
-            paddingTop:"10rem",
-          }}>
-            <Typography variant='h3' >
-            E-commerce Integration
-            </Typography>
+            <Box sx={{ paddingLeft: "20rem", paddingTop: "10rem" }}>
+      <Typography variant='h3'>
+        E-commerce Integration
+      </Typography>
 
-            <Typography variant='p' sx={{paddingTop:'12rem',}}>
-            Specializing the website with unique E-commerce features <br/>integration to develop a user-centric web page.
-            </Typography>
-        {/* {open ? <ExpandLess /> : <ExpandMore />} */}
-              <Typography > 
-               WHICH TYPE OF E-COMMERCE WEBSITES HAVE YOU DEVELOPED IN THE PAST?   <ArrowForwardIcon sx={{paddingLeft:2,paddingTop:2,}} onclick={()=>handleclick(ListItemText)}/>
-              </Typography>
-              <ListItemText variant="p">
-              We are a leading company designing websites for various  <br/>prospects. Our experts have having capability of designing <br/> websites in any language as well as WordPress. In the past, we <br/> have designed many e-commerce websites using PHP, HTML, <br/> & WordPress, and also ready to face challenges to develop from it.
-              </ListItemText>
-          
-            <Divider sx={{width:'45rem',paddingTop:2,color:"white",}}/>
+      <Typography sx={{ paddingTop: '2rem' }}>
+        Specializing the website with unique E-commerce features <br />
+        integration to develop a user-centric web page.
+      </Typography>
 
+      {/* Section 1 */}
+      <Typography onClick={() => handleClick(1)} sx={{ cursor: 'pointer', marginTop: 4,fontFamily:'Arial',fontSize: "20px",}}>
+        WHICH TYPE OF E-COMMERCE WEBSITES HAVE YOU DEVELOPED IN THE PAST?
+        <ArrowForwardIcon sx={{ paddingLeft: 2,color:'#77feb8' }} />
+      </Typography>
+      {openSection === 1 && (
+        <ListItemText>
+          We are a leading company designing websites for various <br />
+          prospects. Our experts have capability of designing <br />
+          websites in any language as well as WordPress. In the past, we <br />
+          have designed many e-commerce websites using PHP, HTML, <br />
+          & WordPress, and also ready to face challenges to develop from it.
+        </ListItemText>
+      )}
+      <Divider sx={{ width: '45rem', paddingTop: 2 }} />
 
-            <Typography>
-              HOW MUCH TIME DOES IT NEED FOR AN ONLINE STORE TO GO LIVE?  <ArrowForwardIcon sx={{paddingLeft:15,paddingTop:2,}}/>
-              </Typography>
-              <ListItemText variant="p">
-              It depends, Actually developing an E-commerce website is not an <br/> easy thing. It requires many features as well as a specific<br/> language to design an e-commerce site. At us, we take the time <br/> period very seriously, and our experts design it in a very short <br/> time period. Normally it takes a month to design an e-commerce <br/> website but we can make it quick for you.
-              </ListItemText>
-              <Divider sx={{width:'45rem',paddingTop:2,}}/>
+      {/* Section 2 */}
+      <Typography onClick={() => handleClick(2)} sx={{ cursor: 'pointer', marginTop: 4, fontFamily:'Arial',fontSize: "20px", }}>
+        HOW MUCH TIME DOES IT NEED FOR AN ONLINE STORE TO GO LIVE?
+        <ArrowForwardIcon sx={{ paddingLeft: 2,  color:'#77feb8'}} />
+      </Typography>
+      {openSection === 2 && (
+        <ListItemText>
+          It depends. Actually, developing an E-commerce website is not an <br />
+          easy thing. It requires many features as well as a specific <br />
+          language to design an e-commerce site. At us, we take the time <br />
+          period very seriously, and our experts design it in a very short <br />
+          time period. Normally it takes a month to design an e-commerce <br />
+          website but we can make it quick for you.
+        </ListItemText>
+      )}
+      <Divider sx={{ width: '45rem', paddingTop: 2 }} />
 
-
-              <Typography>
-               WHAT IF I FACE ANY ISSUES ON MY E-COMMERCE WEBSITE AFTER DELIVERY?  <ArrowForwardIcon sx={{paddingLeft:6,paddingTop:2,}}/>
-              </Typography>
-              <ListItemText variant="p">
-              No need to worry about it as you will not face any major issues on your website. At first,<br/> our support team will stay connected with  you and observe the website's performance. <br/>Next to this, you can contact us any time regarding any issues about the website and our<br/> support team will resolve your issues as soon as possible.
-              </ListItemText>
-              <Divider sx={{width:'45rem',paddingTop:2,}}/>
-
-          </Box>
+      {/* Section 3 */}
+      <Typography onClick={() => handleClick(3)} sx={{ cursor: 'pointer', marginTop: 4 ,fontFamily:'Arial',fontSize: "20px",}}>
+        WHAT IF I FACE ANY ISSUES ON MY E-COMMERCE WEBSITE AFTER DELIVERY?
+        <ArrowForwardIcon sx={{ paddingLeft: 2,color:'#77feb8' }} />
+      </Typography>
+      {openSection === 3 && (
+        <ListItemText>
+          No need to worry about it as you will not face any major issues on your website. At first, <br />
+          our support team will stay connected with you and observe the website's performance. <br />
+          Next to this, you can contact us any time regarding any issues about the website and our <br />
+          support team will resolve your issues as soon as possible.
+        </ListItemText>
+      )}
+      <Divider sx={{ width: '45rem', paddingTop: 2 }} />
+    </Box>
 </>
   );
 };
 
 export default Home;
+
+
+
+
+// import React, { useState } from 'react';
+// import {
+//   Typography,
+//   Divider,
+//   Box,
+//   ListItemText
+// } from '@mui/material';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
+// const EcommerceInfo = () => {
+//   const [openSection, setOpenSection] = useState(null);
+
+  // const handleClick = (section) => {
+  //   setOpenSection(prev => (prev === section ? null : section)); // toggle
+  // };
+
+//   return (
+    // <Box sx={{ paddingLeft: "20rem", paddingTop: "10rem" }}>
+    //   <Typography variant='h3'>
+    //     E-commerce Integration
+    //   </Typography>
+
+    //   <Typography sx={{ paddingTop: '2rem' }}>
+    //     Specializing the website with unique E-commerce features <br />
+    //     integration to develop a user-centric web page.
+    //   </Typography>
+
+    //   {/* Section 1 */}
+    //   <Typography onClick={() => handleClick(1)} sx={{ cursor: 'pointer', marginTop: 4 }}>
+    //     WHICH TYPE OF E-COMMERCE WEBSITES HAVE YOU DEVELOPED IN THE PAST?
+    //     <ArrowForwardIcon sx={{ paddingLeft: 2 }} />
+    //   </Typography>
+    //   {openSection === 1 && (
+    //     <ListItemText>
+    //       We are a leading company designing websites for various <br />
+    //       prospects. Our experts have capability of designing <br />
+    //       websites in any language as well as WordPress. In the past, we <br />
+    //       have designed many e-commerce websites using PHP, HTML, <br />
+    //       & WordPress, and also ready to face challenges to develop from it.
+    //     </ListItemText>
+    //   )}
+    //   <Divider sx={{ width: '45rem', paddingTop: 2 }} />
+
+    //   {/* Section 2 */}
+    //   <Typography onClick={() => handleClick(2)} sx={{ cursor: 'pointer', marginTop: 4 }}>
+    //     HOW MUCH TIME DOES IT NEED FOR AN ONLINE STORE TO GO LIVE?
+    //     <ArrowForwardIcon sx={{ paddingLeft: 2 }} />
+    //   </Typography>
+    //   {openSection === 2 && (
+    //     <ListItemText>
+    //       It depends. Actually, developing an E-commerce website is not an <br />
+    //       easy thing. It requires many features as well as a specific <br />
+    //       language to design an e-commerce site. At us, we take the time <br />
+    //       period very seriously, and our experts design it in a very short <br />
+    //       time period. Normally it takes a month to design an e-commerce <br />
+    //       website but we can make it quick for you.
+    //     </ListItemText>
+    //   )}
+    //   <Divider sx={{ width: '45rem', paddingTop: 2 }} />
+
+    //   {/* Section 3 */}
+    //   <Typography onClick={() => handleClick(3)} sx={{ cursor: 'pointer', marginTop: 4 }}>
+    //     WHAT IF I FACE ANY ISSUES ON MY E-COMMERCE WEBSITE AFTER DELIVERY?
+    //     <ArrowForwardIcon sx={{ paddingLeft: 2 }} />
+    //   </Typography>
+    //   {openSection === 3 && (
+    //     <ListItemText>
+    //       No need to worry about it as you will not face any major issues on your website. At first, <br />
+    //       our support team will stay connected with you and observe the website's performance. <br />
+    //       Next to this, you can contact us any time regarding any issues about the website and our <br />
+    //       support team will resolve your issues as soon as possible.
+    //     </ListItemText>
+    //   )}
+    //   <Divider sx={{ width: '45rem', paddingTop: 2 }} />
+    // </Box>
+//   );
+// };
+
+// export default EcommerceInfo;

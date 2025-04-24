@@ -10,4 +10,4 @@ const OurVision = () => {
   )
 }
 
-export default OurVision
+export default OurVision;
