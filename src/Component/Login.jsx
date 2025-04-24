@@ -1,70 +1,79 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import {
-  Box,
-  Typography,
-  TextField,
-  IconButton,
-  Button,
-  Container,
-  Grid,
-  InputAdornment,
-  Paper,
+  Grid, Container, Box, Paper, Typography,
+  TextField, InputAdornment, IconButton, Button
 } from '@mui/material';
-import { blue } from '@mui/material/colors';
+import { toast, Bounce } from 'react-toastify';
+import PersonIcon from '@mui/icons-material/Person';
+import LockOutlineIcon from '@mui/icons-material/LockOutlined';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import GoogleIcon from '@mui/icons-material/Google';
-import PersonIcon from '@mui/icons-material/Person';
-import LockOutlineIcon from '@mui/icons-material/LockOutline';
-import VisibilityIcon from '@mui/icons-material/Visibility';
 import { Link } from 'react-router-dom';
+import { blue } from '@mui/material/colors';
+
 
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleClick = () => {
+    if (username === 'admin') {
+      toast.success('🦄 Thanks For Login', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    } else if (username === ''){
+      toast.warn('Enter a Valid Name', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
+        
+    }else {
+      toast.error('Sorry', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    }
+  };
+
   return (
-    <Grid
-      container
-      sx={{
-        minHeight: '100vh',
-        backgroundColor: 'white',
-      }}
-    >
+    <Grid container sx={{ minHeight: '100vh', backgroundColor: 'white' }}>
       {/* Left: Login Form */}
-      <Grid
-        item
-        xs={12}
-        md={6}
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          px: { xs: 2, sm: 4, md: 6 },
-          py: 4,
-        }}
-      >
+      <Grid item xs={12} md={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', px: { xs: 2, sm: 4, md: 6 }, py: 4 }}>
         <Container maxWidth="sm">
-          <Box
-            component={Paper}
-            elevation={6}
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: 2,
-              p: 4,
-              borderRadius: 4,
-              width: '100%',
-              maxWidth: 400,
-              backgroundColor: 'white',
-            }}
-          >
-            <Typography variant="h4" gutterBottom>
-              Login
-            </Typography>
+          <Box component={Paper} elevation={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, p: 4, borderRadius: 4, width: '100%', maxWidth: 400, backgroundColor: 'white' }}>
+            <Typography variant="h4" gutterBottom>Login</Typography>
 
             <TextField
               fullWidth
               label="Username"
               variant="outlined"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -79,6 +88,8 @@ const Login = () => {
               label="Password"
               type="password"
               variant="outlined"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -95,13 +106,7 @@ const Login = () => {
               }}
             />
 
-            <Button
-              sx={{
-                alignSelf: 'flex-end',
-                textTransform: 'none',
-                color: 'black',
-              }}
-            >
+            <Button sx={{ alignSelf: 'flex-end', textTransform: 'none', color: 'black' }}>
               Forgot password?
             </Button>
 
@@ -115,61 +120,35 @@ const Login = () => {
                   backgroundImage: 'linear-gradient(45deg, #2bcbe0, #c94be1)',
                 },
               }}
+              onClick={handleClick}
               component={Link}
               to="/Home"
             >
               Submit
             </Button>
 
-            <Typography
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: 3,
-                pt: 2,
-              }}
-            >
+            <Typography sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 3, pt: 2 }}>
               <LinkedInIcon sx={{ color: blue[300] }} />
               <GitHubIcon />
               <GoogleIcon />
             </Typography>
 
-            <Button
-              sx={{ mt: 3 }}
-              variant="contained"
-              component={Link}
-              to="/SignIn"
-            >
+            <Button sx={{ mt: 3 }} variant="contained" component={Link} to="/SignIn">
               SignIn
             </Button>
           </Box>
         </Container>
-        <Grid
-        item
-        xs={12}
-        md={6}
-        sx={{
-          display: { xs: 'none', md: 'flex' },
-          alignItems: 'center',
-          justifyContent: 'center',
-          overflow: 'hidden',
-        }}
-      >
+              {/* Right: Image */}
+      <Grid item xs={12} md={6} sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
         <img
           src="https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg"
           alt="Login Visual"
-          style={{
-            width: '100%',
-            height: '100vh',
-            objectFit: 'cover',
-          }}
+          style={{ width: '100%', height: '100vh', objectFit: 'cover' }}
         />
       </Grid>
       </Grid>
 
-      {/* Right: Image */}
-   
+  
     </Grid>
   );
 };

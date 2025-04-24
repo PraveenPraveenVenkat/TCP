@@ -14,7 +14,21 @@ import {
   
   const SignIn = () => {
     return (
-      <Box sx={{ minHeight: '80vh', display: 'flex', alignItems: 'center' }}>
+      // https://images.pexels.com/photos/941195/pexels-photo-941195.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+      // <Box sx={{
+      //    minHeight: '80vh',
+      //     display: 'flex',
+      //     alignItems: 'center' }}>
+      <Box
+      sx={{
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        backgroundImage: `url('https://images.pexels.com/photos/941195/pexels-photo-941195.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
         <Container maxWidth="lg">
                 <Typography variant="h2" align="center" gutterBottom>
            Sign In

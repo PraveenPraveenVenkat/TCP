@@ -18,8 +18,8 @@ import SignIn from './SignIn';
 
 function AppLayout() {
   const location = useLocation();
-  const hideHeaderOnRoutes = ['/','/SignIn','/Footer'];
-  const hide = ['/'];
+  const hideHeaderOnRoutes = ['/','/SignIn'];
+  const hideFoter = ['/','/SignIn'];
   const notify = () => toast("Wow so easy!");
 
   const darkTheme = createTheme({
@@ -32,7 +32,7 @@ function AppLayout() {
     <>
       {/* ✅ Conditionally show Header */}
       {!hideHeaderOnRoutes.includes(location.pathname) && <Header />}
-      {!hide.includes(location.pathname) && <Footer />}
+      {!hideFoter.includes(location.pathname) && <Footer />}
       <div>
         <button onClick={notify}>Notify!</button>
         <ToastContainer />
@@ -52,7 +52,7 @@ function AppLayout() {
 
       
       <SideBar />
-      <Footer />
+     
      
     </>
   );
@@ -72,5 +72,6 @@ export default App;
 
 // https://vdigtech.com/app-development/
 // https://uicolors.app/
+//https://images.pexels.com/photos/941195/pexels-photo-941195.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 
 
