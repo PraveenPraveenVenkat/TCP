@@ -27,12 +27,13 @@ function SideBar({ children }) {
   };
 
   const list = (anchor) => (
+    // sx={{ backgroundColor:'#77feb8' }}
     <Box
-      sx={{ width: 250 }}
+      sx={{ width: 250, }}             
       role="presentation"
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
+      <List  >
         {Data.map((item, index) => (
           <div key={index}>
               <ListItemButton onClick={() => handleToggle(index)}>

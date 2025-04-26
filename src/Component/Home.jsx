@@ -1,7 +1,8 @@
-import { Button,Stack,  CardContent, Typography ,Grid,Box,ListItem,Divider,ListItemText,} from '@mui/material';
+import { Button,Stack,  CardContent, Typography ,Grid,Box, ThemeProvider,Divider,ListItemText,} from '@mui/material';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import LoginIcon from '@mui/icons-material/Login';
+import {  createTheme} from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import AppShortcutIcon from '@mui/icons-material/AppShortcut';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -9,6 +10,17 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import {useState} from 'react';
 import { keyframes } from "@emotion/react";
 
+  const theme =  createTheme({
+    breakpoints:{
+      values:{
+        mob:0,
+        tab:786,
+        lap:1024,
+       desk:1200
+
+      }
+    }
+  });
 
 const useStyles = makeStyles({
   title: {
@@ -43,8 +55,8 @@ const useStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'center',
     border: '2px solid #ccc',
-    padding: 12,
-    width:"13rem",
+    padding: 14,
+    width:"15rem",
     height: '19rem',
     borderRadius: 2,
     gap: '3rem',
@@ -52,7 +64,7 @@ const useStyles = makeStyles({
     paddingBottom:12,
   },
   image: {
-    paddingTop:22,
+    paddingTop:12,
     height: "8rem",
     width: "12.5rem",
   },
@@ -73,15 +85,45 @@ const Home = () => {
     setOpenSection(prev => (prev === section ? null : section)); // toggle
   };
 
+
+
+
+const steps = [
+  {
+    step: 'Step 01',
+    title: 'Web Inspection',
+    desc: 'Proper inspection of a website with the best tools for the next stage.',
+    bgColor: '#172146',
+    color: 'white',
+  },
+  {
+    step: 'Step 02',
+    title: 'Deep Optimization',
+    desc: 'Optimizing the website with special strategies by covering all its needs.',
+    bgColor: '#77feb8',
+    color: 'black',
+  },
+  {
+    step: 'Step 03',
+    title: 'Analyze Growth',
+    desc: 'Expert analysis of website data for deploying a strategy for further growth.',
+    bgColor: '#172146',
+    color: 'white',
+  },
+];
+
  
 
   return (
     <>
 
     
-
-      <CardContent>
+    <ThemeProvider theme={theme}>
+      <CardContent >
       
+      {/* <Grid> */}
+
+      <Grid item xs={2} >
         <Typography variant="h1" sx={{
           fontSize:'5.5rem',paddingLeft:'18rem',paddingTop:12,
           // padding: { xs: 1, sm: 6, md: 8, lg: 12, xl:14 },
@@ -90,7 +132,7 @@ const Home = () => {
         </Typography>
 
 
-        <Grid item xs={2}>
+       
         <Typography
           sx={{
             
@@ -102,11 +144,12 @@ const Home = () => {
           }}
         >
           Unlock the Power of Web Presence with our <br />
-          Professional Website Designing Service! Elevate <br />
+          Professional Website Designing Service! Elevate <br/>
           Your Online Presence with Stunning Website <br />
           Designs.
         </Typography>
         {/* <img src="https://vdigtech.com/wp-content/uploads/2024/03/banner_home02-DD9Q8T2.jpg" sx={{alignItems:'right,'}} alt="" /> */}
+    
      
           </Grid>
           </CardContent>
@@ -156,6 +199,14 @@ const Home = () => {
 
 
 
+         {/* src='https://vdigtech.com/wp-content/uploads/2024/03/person_home02-USU94UZ.png' */}
+
+         {/* </Grid>     */}
+
+
+
+         
+
          <Typography
           sx={{
             
@@ -171,7 +222,7 @@ const Home = () => {
 
 
      
-              {/* //!First Grid Box */}
+              {/* //?First Grid Box */}
             
             
             <Grid container sx={{
@@ -180,9 +231,15 @@ const Home = () => {
             }} spacing={2}>
       <Grid item xs={4}>
         <Box className={classes.box} sx={{backgroundColor:"#77feb8",}}>
+          {/* <img src='https://vdigtech.com/wp-content/uploads/2024/03/development-1.png' ></img> */}
         
         <ArrowOutwardIcon  sx={{alignItems:"Left",paddingLeft:"12rem",color:'black'}}/>
-          <Typography variant="h6" sx={{mt:2,color:'black',}}>Web Development</Typography>
+          <Typography variant="h6"  sx={{mt:2,color:'black',
+            '&: hover':{
+              color:'#f5f5f5',
+              transform: 'translateY(-15px)',
+            },
+          }}>Web Development</Typography>
           
           <img
             src='https://vdigtech.com/wp-content/uploads/2024/03/Image-20.jpg'
@@ -196,12 +253,14 @@ const Home = () => {
       <Grid item xs={4}>
         <Box className={classes.box}>
           <Grid  direction="row">
-          < AppShortcutIcon sx={{alignItems:"Left",}}/>
-  
+      
             <ArrowOutwardIcon  sx={{alignItems:"right",paddingLeft:"12rem",}} />
           </Grid>
-        
-          <Typography variant="h6"sx={{mt:2,}} >App Development </Typography>
+        {/* <img src='https://vdigtech.com/wp-content/uploads/2024/03/XMLID_1809_.png' sx={{alignItems:"Left",}}></img> */}
+          <Typography variant="h6"sx={{mt:2, '&:hover':{
+              color:'#77feb8',
+            },
+            }} >App Development </Typography>
           <img
             src='https://vdigtech.com/wp-content/uploads/2024/03/Image-21.jpg'
             alt='App Dev'
@@ -213,8 +272,11 @@ const Home = () => {
 
       <Grid item xs={4}>
         <Box className={classes.box}>
+        {/* <img src='https://vdigtech.com/wp-content/uploads/2024/03/brainstorming-1.png'></img> */}
         <ArrowOutwardIcon  sx={{alignItems:"Left",paddingLeft:"12rem",}}/>
-          <Typography variant="h6" sx={{mt:2,}} >Digital Marketing</Typography>
+          <Typography variant="h6" sx={{mt:2,'&:hover':{
+              color:'#77feb8',
+            },}} >Digital Marketing</Typography>
           <img
             src='https://vdigtech.com/wp-content/uploads/2024/03/Image-27.jpg'
             alt='Digital Marketing'
@@ -226,10 +288,14 @@ const Home = () => {
 
       <Grid item xs={4}>
         <Box className={classes.box}>
+        {/* https://vdigtech.com/wp-content/uploads/2024/03/branding-1.png */}
         <ArrowOutwardIcon  sx={{alignItems:"Left",paddingLeft:"12rem",}}/>
-          <Typography variant="h6" sx={{mt:2,}}>Website Maintenance</Typography>
+          <Typography variant="h6" sx={{mt:2,'&:hover':{
+              color:'#77feb8',
+            },}}>Website Maintenance</Typography>
           <img
             src='https://vdigtech.com/wp-content/uploads/2024/03/Image-24.jpg'
+          
             alt='Graphic Design'
             className={classes.image}
           />
@@ -249,10 +315,13 @@ const Home = () => {
 
        {/* //?Second Grid Box */}
 
-      <Grid item xs={4}>
+      <Grid item xs={2}>
         <Box className={classes.box}>
+        {/* <img src='https://vdigtech.com/wp-content/uploads/2024/03/Group-1-2.png'></img> */}
         <ArrowOutwardIcon  sx={{alignItems:"Left",paddingLeft:"12rem",}}/>
-          <Typography variant="h6">Digital Marketing</Typography>
+          <Typography variant="h6" sx={{'&:hover':{
+              color:'#77feb8',
+            },}}>Digital Marketing</Typography>
           <img
             src='https://vdigtech.com/wp-content/uploads/2024/03/Untitled-design-2.png'
             alt='Digital Marketing'
@@ -264,8 +333,12 @@ const Home = () => {
 
       <Grid item xs={4}>
         <Box className={classes.box}>
+
+        {/* <img src='https://vdigtech.com/wp-content/uploads/2024/03/optimization-1.png'></img> */}
         <ArrowOutwardIcon  sx={{alignItems:"Left",paddingLeft:"12rem",}}/>
-          <Typography variant="h6">Graphic Design</Typography>
+          <Typography variant="h6" sx={{'&:hover':{
+              color:'#77feb8',
+            },}}>Graphic Design</Typography>
           <img
             src='https://vdigtech.com/wp-content/uploads/2024/03/Untitled-design-1.png'
             alt='Graphic Design'
@@ -354,9 +427,56 @@ const Home = () => {
           </Grid>
 
 
-             <Grid container spacing={3} columnGap={2} sx={{paddingLeft:"20rem",gap:14,paddingTop:"12rem",}}>
+          <Grid
+      container
+      spacing={4}
+      justifyContent="center"
+      sx={{
+        paddingTop: '8rem',
+        paddingX: { xs: 2, md: '10rem' },
+      }}
+    >
+      {steps.map((step, index) => (
+        <Grid item xs={12} sm={6} md={4} key={index}>
+          <Box
+            sx={{
+              backgroundColor: step.bgColor,
+              color: step.color,
+              borderRadius: '16px',
+              padding: 4,
+              minHeight: '18rem',
+              boxShadow: 4,
+              transition: 'transform 0.3s',
+              '&:hover': {
+                transform: 'translateY(-5px)',
+              },
+            }}
+          >
+            <Typography variant="subtitle1" sx={{ opacity: 0.7, fontWeight: 600 }}>
+              {step.step}
+            </Typography>
+            <Typography variant="h5" sx={{ fontWeight: 'bold', marginY: 1 }}>
+              {step.title}
+            </Typography>
+            <Divider
+              sx={{
+                backgroundColor: step.color === 'white' ? '#ffffffaa' : '#00000088',
+                width: '18rem',
+                marginBottom: 2,
+              }}
+            />
+            <Typography variant="body2" sx={{ lineHeight: 1.6 }}>
+              {step.desc}
+            </Typography>
+          </Box>
+        </Grid>
+      ))}
+    </Grid>
+
+
+             {/* <Grid container spacing={3} columnGap={2} sx={{paddingLeft:"20rem",gap:14,paddingTop:"12rem",}}> */}
                     {/* //?Container 1 */}
-              <Grid item xs={3}>
+              {/* <Grid item xs={3}>
                 <Box sx={{backgroundColor:"#172146",height:'15rem',width:'17rem',}}>
                   <Typography variant='p'>
                            Step 01
@@ -370,9 +490,9 @@ const Home = () => {
                   </Typography>
                 </Box>
 
-            </Grid>
+            </Grid> */}
                   {/* //?Container 2 */}
-            <Grid item xs={3}>
+            {/* <Grid item xs={3}>
                 <Box sx={{backgroundColor:"#77feb8",height:'15rem',width:'17rem', color:'black'}}>
                   <Typography variant='p'>
                   Step 02
@@ -387,11 +507,11 @@ Optimizing the website with special strategies by covering all its needs
                   </Typography>
                 </Box>
 
-            </Grid>
+            </Grid> */}
 
 
               {/* //?Container 3 */}
-            <Grid item xs={3}>
+            {/* <Grid item xs={3}>
                 <Box sx={{backgroundColor:"#172146",height:'15rem',width:'17rem',}}>
                   <Typography variant='p'>
                   Step 03
@@ -407,21 +527,13 @@ Optimizing the website with special strategies by covering all its needs
 
             </Grid>
             
-            </Grid>
-            {/* '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"', */}
+            </Grid> */}
 
 
 
-            <Box sx={{ paddingLeft: "20rem", paddingTop: "10rem" }}>
+
+
+<Box sx={{ paddingLeft: "20rem", paddingTop: "10rem" }}>
       <Typography variant='h3'>
         E-commerce Integration
       </Typography>
@@ -432,53 +544,47 @@ Optimizing the website with special strategies by covering all its needs
       </Typography>
 
       {/* Section 1 */}
-      <Typography onClick={() => handleClick(1)} sx={{ cursor: 'pointer', marginTop: 4,fontFamily:'Arial',fontSize: "20px",}}>
+      <Typography onClick={() => handleClick(1)} sx={{ cursor: 'pointer', marginTop: 4, fontFamily: 'Arial', fontSize: "20px" }}>
         WHICH TYPE OF E-COMMERCE WEBSITES HAVE YOU DEVELOPED IN THE PAST?
-        <ArrowForwardIcon sx={{ paddingLeft: 2,color:'#77feb8' }} />
+        <ArrowForwardIcon sx={{ paddingLeft: 2, color: '#77feb8' }} />
       </Typography>
       {openSection === 1 && (
         <ListItemText>
           We are a leading company designing websites for various <br />
           prospects. Our experts have capability of designing <br />
-          websites in any language as well as WordPress. In the past, we <br />
-          have designed many e-commerce websites using PHP, HTML, <br />
-          & WordPress, and also ready to face challenges to develop from it.
+          websites in any language as well as WordPress...
         </ListItemText>
       )}
       <Divider sx={{ width: '45rem', paddingTop: 2 }} />
 
       {/* Section 2 */}
-      <Typography onClick={() => handleClick(2)} sx={{ cursor: 'pointer', marginTop: 4, fontFamily:'Arial',fontSize: "20px", }}>
+      <Typography onClick={() => handleClick(2)} sx={{ cursor: 'pointer', marginTop: 4, fontFamily: 'Arial', fontSize: "20px" }}>
         HOW MUCH TIME DOES IT NEED FOR AN ONLINE STORE TO GO LIVE?
-        <ArrowForwardIcon sx={{ paddingLeft: 2,  color:'#77feb8'}} />
+        <ArrowForwardIcon sx={{ paddingLeft: 2, color: '#77feb8' }} />
       </Typography>
       {openSection === 2 && (
         <ListItemText>
-          It depends. Actually, developing an E-commerce website is not an <br />
-          easy thing. It requires many features as well as a specific <br />
-          language to design an e-commerce site. At us, we take the time <br />
-          period very seriously, and our experts design it in a very short <br />
-          time period. Normally it takes a month to design an e-commerce <br />
-          website but we can make it quick for you.
+          It depends. Actually, developing an E-commerce website is not an easy thing...
         </ListItemText>
       )}
       <Divider sx={{ width: '45rem', paddingTop: 2 }} />
 
       {/* Section 3 */}
-      <Typography onClick={() => handleClick(3)} sx={{ cursor: 'pointer', marginTop: 4 ,fontFamily:'Arial',fontSize: "20px",}}>
+      <Typography onClick={() => handleClick(3)} sx={{ cursor: 'pointer', marginTop: 4, fontFamily: 'Arial', fontSize: "20px" }}>
         WHAT IF I FACE ANY ISSUES ON MY E-COMMERCE WEBSITE AFTER DELIVERY?
-        <ArrowForwardIcon sx={{ paddingLeft: 2,color:'#77feb8' }} />
+        <ArrowForwardIcon sx={{ paddingLeft: 2, color: '#77feb8' }} />
       </Typography>
       {openSection === 3 && (
         <ListItemText>
-          No need to worry about it as you will not face any major issues on your website. At first, <br />
-          our support team will stay connected with you and observe the website's performance. <br />
-          Next to this, you can contact us any time regarding any issues about the website and our <br />
-          support team will resolve your issues as soon as possible.
+          No need to worry about it as you will not face any major issues on your website...
         </ListItemText>
       )}
       <Divider sx={{ width: '45rem', paddingTop: 2 }} />
     </Box>
+    <Box>
+
+    </Box>
+    </ThemeProvider>
 </>
   );
 };

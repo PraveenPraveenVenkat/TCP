@@ -16,6 +16,7 @@ import SignIn from './SignIn';
 
 
 
+
 function AppLayout() {
   const location = useLocation();
   const hideHeaderOnRoutes = ['/','/SignIn'];
@@ -75,5 +76,4 @@ export default App;
 // https://vdigtech.com/app-development/
 // https://uicolors.app/
 //https://images.pexels.com/photos/941195/pexels-photo-941195.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
-
 
