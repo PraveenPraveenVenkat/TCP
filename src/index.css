@@ -1,8 +1,14 @@
-body{
+/* body{
     background-color: #080707;
     color: aliceblue;
-    
-    /* '&'Background -color:"white" */
+  
+  } */
+  
+  body {
+    margin: 0;
+    padding: 0;
+    /* Remove background-color here */
+    background-color: #080707;
+    color: aliceblue;
+    /* font-family: 'Roboto', sans-serif; */
   }
-  
-  

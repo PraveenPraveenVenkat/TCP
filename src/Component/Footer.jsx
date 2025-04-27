@@ -11,8 +11,7 @@ const Footer = () => {
         textAlign: 'center',
         bgcolor: '#77feb8',
         color: 'white',
-        py: 2, // Adjusted for better spacing
-        // zIndex: 1300, // Ensure it stays on top
+        py: 2,
       }}
     >
       <Typography variant="body2" color="error">
