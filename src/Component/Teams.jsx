@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid, Box, Typography } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import { blue } from '@mui/material/colors';
+
 
 const Teams = () => {
   return (
@@ -14,7 +13,7 @@ const Teams = () => {
              
         <Grid container spacing={4} sx={{justifyContent: 'center',}}>
               {/* First Row Services */}
-              <Grid item xs={12} sm={6} md={4} lg={4}>
+              <Grid item xs={12} sm={4} md={3}>
                 <Box sx={{backgroundColor:'#00d4d7',height:'30rem',}}>
                   <img src='https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=600' width={'50%'} height={'50%'}>  
                   </img>

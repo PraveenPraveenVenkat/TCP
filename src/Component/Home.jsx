@@ -1,6 +1,5 @@
 import { 
-  Button, 
-  Stack, 
+  Button,  
   Typography, 
   Grid, 
   Box, 
@@ -10,14 +9,14 @@ import {
   useMediaQuery 
 } from '@mui/material';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
-import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { createTheme } from '@mui/material/styles';
 import { styled } from '@mui/system';
 import { useState } from 'react';
 import { keyframes } from "@emotion/react";
-import Animation from "./Animation.gif";
+// import Data from './ services';
+
 
 // Create a responsive theme with custom breakpoints
 const theme = createTheme({
@@ -82,24 +81,6 @@ const ServiceImage = styled('img')({
   objectFit: 'cover',
 });
 
-const StyledButton = styled(Button)(({ theme }) => ({
-  border: '2px solid white',
-  color: 'white',
-  height: '55px',
-  width: '10rem',
-  borderRadius: '8px',
-  transition: 'all 0.3s ease',
-  '&:hover': {
-    backgroundColor: '#77feb8',
-    color: 'black',
-    transform: 'translateY(-3px)',
-  },
-  [theme.breakpoints.down('sm')]: {
-    width: '8rem',
-    height: '45px',
-    fontSize: '0.8rem',
-  },
-}));
 
 const Home = () => {
   const [openSection, setOpenSection] = useState(null);
@@ -137,60 +118,46 @@ const Home = () => {
     },
   ];
 
+  
+
+  const services = [
+    {
+      title: 'Web Development',
+      image: 'https://vdigtech.com/wp-content/uploads/2024/03/Image-20.jpg',
+      alt: 'Web Dev',
+      bgColor: '#77feb8',
+    },
+    {
+      title: 'App Development',
+      image: 'https://vdigtech.com/wp-content/uploads/2024/03/Image-21.jpg',
+      alt: 'App Dev',
+    },
+    {
+      title: 'Digital Marketing',
+      image: 'https://vdigtech.com/wp-content/uploads/2024/03/Image-27.jpg',
+      alt: 'Digital Marketing',
+    },
+    {
+      title: 'Website Maintenance',
+      image: 'https://vdigtech.com/wp-content/uploads/2024/03/Image-24.jpg',
+      alt: 'Website Maintenance',
+    },
+    {
+      title: 'SEO & Analytics',
+      image: 'https://vdigtech.com/wp-content/uploads/2024/03/Untitled-design-2.png',
+      alt: 'SEO & Analytics',
+    },
+    {
+      title: 'Graphic Design',
+      image: 'https://vdigtech.com/wp-content/uploads/2024/03/Untitled-design-1.png',
+      alt: 'Graphic Design',
+    },
+  ];
+
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="2xl" disableGutters sx={{ overflow: 'hidden' }}>
   
-        <Box sx={{ position: 'relative', width: '100%' , }}>
-  {/* Background Image */}
-  <img src={Animation} alt="Animation" style={{ width: '100%', display: 'block' }} />
-
-  {/* Overlay Text & Buttons */}
-  <Box
-    sx={{
-      position: 'absolute',
-      top: '83%',
-      left: '20%',
-      transform: 'translate(-50%, -50%)',
-      color: '#fff', // adjust for contrast
-      textAlign: 'center',
-      padding: 2,
-      pt: { xs: 0, sm: 4, md: 6, lg: 10 }
-      // p:{
-      //    sm:1,
-      //    sm:4,
-      //    lg:8,
-      // },
-    }}
-  >
-    <Typography
-      variant="body1"
-      sx={{
-        fontSize: { xs: '0.9rem', sm: '1.2rem', md: '1.5rem' },
-        pl:{xs:8}
-        
-      }}
-    >
-      Unlock the Power of Web Presence with our <br />
-      Professional Website Designing Service! Elevate <br />
-      Your Online Presence with Stunning Website <br />
-      Designs.
-    </Typography>
-
-    <Stack
-      direction={{ xs: 'row', sm: 'row',md:'row',lg:'row' }}
-      spacing={{ xs: 1, sm: 6,md:7,lg:12 }}
-      sx={{  justifyContent: 'center', pt:{xs:2},ml:{xs:12}}}
-    >
-      <StyledButton>
-        GET STARTED <TrendingFlatIcon sx={{ ml: 1 }} />
-      </StyledButton>
-      <StyledButton>
-        ABOUT US <TrendingFlatIcon sx={{ ml: 1 }} />
-      </StyledButton>
-    </Stack>
-  </Box>
-</Box>
 
        
      
@@ -222,117 +189,56 @@ const Home = () => {
 
         {/* Services Section */}
         <Box sx={{ py: { xs: 6, md: 12 } }}>
-          <Container>
+      <Container>
 
-            <Typography variant="h2" sx={{
-              textAlign: "center",
-              fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
-              mb: 2,
-            }}>
-              Our Services
-            </Typography>
-            
-            <Typography variant="body1" sx={{
-              textAlign: "center",
-              fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
-              mb: 6,
-            }}>
-              Comprehensive Website Services to Ignite Your Online Success. Empower
-              Your Business with Powerful Online Services from our Website Designs.
-            </Typography>
-            
-            <Grid container spacing={4} sx={{justifyContent: 'center',}}>
-              {/* First Row Services */}
-              <Grid item xs={12} sm={6} md={4} lg={8}>
-                <ServiceBox bgColor="#77feb8">
-                  <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
-                    <ArrowOutwardIcon sx={{ color: 'black' }} />
-                  </Box>
-                  <Typography variant="h6" sx={{ color: 'black', fontWeight: 'bold' }}>
-                    Web Development
-                  </Typography>
-                  <ServiceImage src='https://vdigtech.com/wp-content/uploads/2024/03/Image-20.jpg' alt='Web Dev' />
-                </ServiceBox>
-              </Grid>
-              
-              <Grid item xs={12} sm={6} md={4} lg={8}>
-                <ServiceBox>
-                  <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
-                    <ArrowOutwardIcon />
-                  </Box>
-                  <Typography variant="h6" sx={{ 
+        <Typography
+          variant="h2"
+          sx={{
+            textAlign: "center",
+            fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
+            mb: 2,
+          }}
+        >
+          Our Services
+        </Typography>
+
+        <Typography
+          variant="body1"
+          sx={{
+            textAlign: "center",
+            fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
+            mb: 6,
+          }}
+        >
+          Comprehensive Website Services to Ignite Your Online Success. Empower
+          Your Business with Powerful Online Services from our Website Designs.
+        </Typography>
+
+        <Grid container spacing={4} sx={{ justifyContent: 'center' }}>
+          {services.map((service, index) => (
+            <Grid item key={index} xs={12} sm={6} md={6} lg={4}>
+              <ServiceBox bgColor={service.bgColor || 'transparent'}>
+                <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
+                  <ArrowOutwardIcon sx={{ color: service.bgColor ? 'black' : 'inherit' }} />
+                </Box>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    color: service.bgColor ? 'black' : 'inherit',
+                    fontWeight: 'bold',
                     '&:hover': { color: '#77feb8' },
-                    fontWeight: 'bold'
-                  }}>
-                    App Development
-                  </Typography>
-                  <ServiceImage src='https://vdigtech.com/wp-content/uploads/2024/03/Image-21.jpg' alt='App Dev' />
-                </ServiceBox>
-              </Grid>
-              
-              <Grid item xs={12} sm={6} md={4} lg={8}>
-                <ServiceBox>
-                  <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
-                    <ArrowOutwardIcon />
-                  </Box>
-                  <Typography variant="h6" sx={{ 
-                    '&:hover': { color: '#77feb8' },
-                    fontWeight: 'bold'
-                  }}>
-                    Digital Marketing
-                  </Typography>
-                  <ServiceImage src='https://vdigtech.com/wp-content/uploads/2024/03/Image-27.jpg' alt='Digital Marketing' />
-                </ServiceBox>
-              </Grid>
-              
-              {/* Second Row Services */}
-              <Grid item xs={12} sm={6} md={4} lg={8}>
-                <ServiceBox>
-                  <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
-                    <ArrowOutwardIcon />
-                  </Box>
-                  <Typography variant="h6" sx={{ 
-                    '&:hover': { color: '#77feb8' },
-                    fontWeight: 'bold'
-                  }}>
-                    Website Maintenance
-                  </Typography>
-                  <ServiceImage src='https://vdigtech.com/wp-content/uploads/2024/03/Image-24.jpg' alt='Website Maintenance' />
-                </ServiceBox>
-              </Grid>
-              
-              <Grid item xs={12} sm={6} md={4} lg={8}>
-                <ServiceBox>
-                  <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
-                    <ArrowOutwardIcon />
-                  </Box>
-                  <Typography variant="h6" sx={{ 
-                    '&:hover': { color: '#77feb8' },
-                    fontWeight: 'bold'
-                  }}>
-                    SEO & Analytics
-                  </Typography>
-                  <ServiceImage src='https://vdigtech.com/wp-content/uploads/2024/03/Untitled-design-2.png' alt='SEO & Analytics' />
-                </ServiceBox>
-              </Grid>
-              
-              <Grid item xs={12} sm={6} md={4} lg={2}>
-                <ServiceBox>
-                  <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
-                    <ArrowOutwardIcon />
-                  </Box>
-                  <Typography variant="h6" sx={{ 
-                    '&:hover': { color: '#77feb8' },
-                    fontWeight: 'bold'
-                  }}>
-                    Graphic Design
-                  </Typography>
-                  <ServiceImage src='https://vdigtech.com/wp-content/uploads/2024/03/Untitled-design-1.png' alt='Graphic Design' />
-                </ServiceBox>
-              </Grid>
+                  }}
+                >
+                  {service.title}
+                </Typography>
+                <ServiceImage src={service.image} alt={service.alt} />
+              </ServiceBox>
             </Grid>
-          </Container>
-        </Box>
+          ))}
+        </Grid>
+
+      </Container>
+    </Box>
 
         {/* Scrolling Banner */}
         <Box sx={{

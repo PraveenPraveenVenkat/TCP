@@ -13,14 +13,15 @@ import OurVision from './OurVision';
 import LinkedIN from './LinkedIN';
 import Website from './Website';
 import SignIn from './SignIn';
+import First from './First';
 
 
 
 
 function AppLayout() {
   const location = useLocation();
-  const hideHeaderOnRoutes = ['/','/SignIn'];
-  const hideFoter = ['/','/SignIn'];
+  const hideHeaderOnRoutes = ['/','/SignIn','/Login'];
+  const hideFoter = ['/','/SignIn','/Login'];
   const notify = () => toast("Wow so easy!");
 
   const darkTheme = createTheme({
@@ -41,7 +42,7 @@ function AppLayout() {
         <ToastContainer />
       {/* </div> */}
       <Routes>
-        <Route path="/" element={<Login/>} />
+        <Route path="/" element={<First/>} />
         <Route path="/Project" element={<Project />} />
         <Route path="/Teams" element={<Teams />} />
         <Route path="/Home" element={<Home />} />
@@ -50,6 +51,7 @@ function AppLayout() {
         <Route path="/LinkedIn" element={<LinkedIN/>} />
         <Route path="/ Website" element={< Website/>} />
         <Route path="/SignIn" element={< SignIn/>} />
+        <Route path="/Login" element={< Login/>} />
 
       </Routes>
 

@@ -87,6 +87,44 @@ const Data = [
 ];
 
 
+
+
+
+const services = [
+  {
+    title: 'Web Development',
+    image: 'https://vdigtech.com/wp-content/uploads/2024/03/Image-20.jpg',
+    alt: 'Web Dev',
+    bgColor: '#77feb8',
+  },
+  {
+    title: 'App Development',
+    image: 'https://vdigtech.com/wp-content/uploads/2024/03/Image-21.jpg',
+    alt: 'App Dev',
+  },
+  {
+    title: 'Digital Marketing',
+    image: 'https://vdigtech.com/wp-content/uploads/2024/03/Image-27.jpg',
+    alt: 'Digital Marketing',
+  },
+  {
+    title: 'Website Maintenance',
+    image: 'https://vdigtech.com/wp-content/uploads/2024/03/Image-24.jpg',
+    alt: 'Website Maintenance',
+  },
+  {
+    title: 'SEO & Analytics',
+    image: 'https://vdigtech.com/wp-content/uploads/2024/03/Untitled-design-2.png',
+    alt: 'SEO & Analytics',
+  },
+  {
+    title: 'Graphic Design',
+    image: 'https://vdigtech.com/wp-content/uploads/2024/03/Untitled-design-1.png',
+    alt: 'Graphic Design',
+  },
+]
+
+
 const Rows = [
   { "food":"Frozen yoghurt", 
     "Calories":159, 
