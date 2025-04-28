@@ -138,7 +138,8 @@ export default function PrimarySearchAppBar() {
       <MenuItem  color='secondary'>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
-            <MailIcon />
+            <MailIcon     component={Link}
+               to="/LinkedIN"                         />
           </Badge>
         </IconButton>
         <p>Messages</p>

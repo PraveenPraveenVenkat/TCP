@@ -1,41 +1,61 @@
 import React from 'react';
-import { Grid, Paper,Typography } from '@mui/material';
+import { Grid, Box, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
-
-const Item = styled(Paper)(({ theme }) => ({
-  padding: theme.spacing(2),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
+import { blue } from '@mui/material/colors';
 
 const Teams = () => {
   return (
-    <div>
-      <h4>Our Teams</h4>
-      <Grid container rowSpacing={1}  spacing={2}
-       sx={{
-        justifyContent: "space-around",
-        alignItems: "stretch",
-      }}
-      >
-        <Grid item xs={2}>
-          <Item>
-            
-            
-          <Typography variant="h4" gutterBottom>
-             Login
-          </Typography>
-</Item>
-        </Grid>
-        <Grid item xs={4}>
-          <Item>size=4</Item>
-        </Grid>
-      </Grid>
-    </div>
+    <>
+      <Typography variant='h3' align="center" gutterBottom>
+        Created For & Delivered By Experts
+      </Typography>
 
+      <Box sx={{width:'70rem',height:'50rem',ml:12,}}>
+             
+        <Grid container spacing={4} sx={{justifyContent: 'center',}}>
+              {/* First Row Services */}
+              <Grid item xs={12} sm={6} md={4} lg={4}>
+                <Box sx={{backgroundColor:'#00d4d7',height:'30rem',}}>
+                  <img src='https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=600' width={'50%'} height={'50%'}>  
+                  </img>
+                  <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
+                  
+                  </Box>
+                  <Typography variant="h6" sx={{ color: 'black', fontWeight: 'bold' }}>
+                    Web Development
+                  </Typography>
+                </Box>
+              </Grid>
 
+              <Grid item xs={12} sm={6} md={4} lg={4}>
+                <Box sx={{backgroundColor:'#00d4d7',height:'30rem',}}>
+                  <img src='https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=600' width={'50%'} height={'50%'}>  
+                  </img>
+                  <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
+                  
+                  </Box>
+                  <Typography variant="h6" sx={{ color: 'black', fontWeight: 'bold' }}>
+                    Web Development
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid item xs={12} sm={6} md={4} lg={4}>
+                <Box sx={{backgroundColor:'#00d4d7',height:'30rem',}}>
+                  <img src='https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=600' width={'50%'} height={'50%'}>  
+                  </img>
+                  <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
+                  
+                  </Box>
+                  <Typography variant="h6" sx={{ color: 'black', fontWeight: 'bold' }}>
+                    Web Development
+                  </Typography>
+                </Box>
+              </Grid>
+              
+              </Grid>
 
-
+      </Box>
+    </>
   );
 };
 
