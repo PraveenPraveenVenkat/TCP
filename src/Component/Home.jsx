@@ -196,7 +196,7 @@ const Home = () => {
     }}>
       <Typography variant='h2' sx={{color:'black',marginLeft:'30rem',pt:4}}>250  </Typography>
       <Typography variant='h5' sx={{color:'black',marginLeft:'30rem',pt:1}}>PROJECT  </Typography>
-      <Divider sx={{color:'black', fontWeight: 'bold',justifyContent:'end',}}/> 
+      <Divider sx={{color:'black',mb:2, fontWeight: 'bold',justifyContent:'end',}}/> 
       <Typography variant='h2' sx={{color:'black',marginLeft:'30rem',pt:4}}>125  </Typography>
       <Typography variant='h5' sx={{color:'black',marginLeft:'30rem',pt:1}}>CLIENTS </Typography>
       <Divider sx={{color:'black', fontWeight: 'bold',width:"-40rem",}}/> 

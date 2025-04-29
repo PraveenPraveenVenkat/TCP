@@ -1,65 +1,66 @@
-                          //? Side Bar JSON
 export const Data = [
   {
     "title": "Home",
     "path": "/Home",
+    "iconName": "Home", 
     "subMenu": [
-      { "title": "Project", "path":"/Project", },
-      { "title": "Teams", "path": "/Teams" },
-    ],
+      { "title": "Project", "path":"/Project" },
+      { "title": "Teams", "path": "/Teams" }
+    ]
   },
- 
   {
     "title": "About Us",
     "path": "/about",
+    "iconName": "PermContactCalendar", 
     "subMenu": [
       { "title": "Our Growth", "path": "/OurGrowth" },
-      { "title": "Our Vision", "path": "/OurVision" },
-    ],
+      { "title": "Our Vision", "path": "/OurVision" }
+    ]
   },
-
   {
     "title": "Services",
     "path": "/services",
+    "iconName": "SupportAgent",
     "subMenu": [
       { "title": "Web Development", "path": "/WebDevelopment" },
       { "title": "App Development", "path": "/AppDevelopment" },
-      { "title": "3D Architect", "path": "/Architect" },
-    ],
+      { "title": "3D Architect", "path": "/Architect" }
+    ]
   },
   {
     "title": "Contact",
     "path": "/contact",
+    "iconName": "Email",
     "subMenu": [
       { "title": "LinkedIN", "path": "/Linkedin" },
-      { "title": "Website", "path": "/Website" },
-    ],
+      { "title": "Website", "path": "/Website" }
+    ]
   },
-
   {
     "title": "Mail",
+    "iconName": "Email",
     "subMenu": [
       { "title": "Mail", "path": "/Mail" },
-      { "title": "Website", "path": "/services/app" },
+      { "title": "Website", "path": "/services/app" }
     ]
   },
   {
     "title": "Review",
+    "iconName": "Flaky",
     "subMenu": [
       { "title": "Customer Review", "path": "/Customer Review" },
-      { "title": "Website", "path": "/services/app" },
+      { "title": "Website", "path": "/services/app" }
     ]
-  
   },
   {
     "title": "Location",
+    "iconName": "AddLocationAltSharp",
     "subMenu": [
       { "title": "CBE", "path": "/services/web" },
-      { "title": "Chennai", "path": "/services/app" },
+      { "title": "Chennai", "path": "/services/app" }
     ]
   }
 ];
-
 
 
               //? Home  Page Services
