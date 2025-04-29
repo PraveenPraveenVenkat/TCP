@@ -9,15 +9,15 @@ const Teams = () => {
         Created For & Delivered By Experts
       </Typography>
 
-      <Box sx={{width:'70rem',height:'50rem',ml:12,}}>
+      <Box xs={12} sm={4} md={4} lg={4} sx={{width:'70rem',height:'50rem',ml:12,}}>
              
         <Grid container spacing={4} sx={{justifyContent: 'center',}}>
               {/* First Row Services */}
-              <Grid item xs={12} sm={4} md={3}>
-                <Box sx={{backgroundColor:'#00d4d7',height:'30rem',}}>
-                  <img src='https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=600' width={'50%'} height={'50%'}>  
+              <Grid item xs={12} sm={4} md={4} lg={4}>
+                <Box sx={{backgroundColor:'white',height:'30rem',borderColor:'#77feb8',}}>
+                  <img src='https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=600'   width={'50%'} height={'50%'}>  
                   </img>
-                  <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
+                  <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%',borderColor:'#77feb8',borderRadius:'12rem' }}>
                   
                   </Box>
                   <Typography variant="h6" sx={{ color: 'black', fontWeight: 'bold' }}>
@@ -26,7 +26,7 @@ const Teams = () => {
                 </Box>
               </Grid>
 
-              <Grid item xs={12} sm={6} md={4} lg={4}>
+              {/* <Grid item xs={12} sm={6} md={4} lg={4}>
                 <Box sx={{backgroundColor:'#00d4d7',height:'30rem',}}>
                   <img src='https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=600' width={'50%'} height={'50%'}>  
                   </img>
@@ -37,8 +37,8 @@ const Teams = () => {
                     Web Development
                   </Typography>
                 </Box>
-              </Grid>
-              <Grid item xs={12} sm={6} md={4} lg={4}>
+              </Grid> */}
+              {/* <Grid item xs={12} sm={6} md={4} lg={4}>
                 <Box sx={{backgroundColor:'#00d4d7',height:'30rem',}}>
                   <img src='https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=600' width={'50%'} height={'50%'}>  
                   </img>
@@ -49,7 +49,7 @@ const Teams = () => {
                     Web Development
                   </Typography>
                 </Box>
-              </Grid>
+              </Grid> */}
               
               </Grid>
 

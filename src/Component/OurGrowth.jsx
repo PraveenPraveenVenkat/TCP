@@ -32,29 +32,6 @@ const OurGrowth = () => {
   return (
     <>
     <ThemeProvider theme={theme}>
-      {/* <Container sx={{ paddingTop: 12, alignItems: 'center' }}>
-        <Box
-          sx={(theme) => ({
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: 2,
-            padding: 4,
-            border: '2px solid #ccc',
-            borderRadius: 4,
-            height: '40rem',
-            width: '60rem',
-            backgroundColor: 'white',
-            boxShadow: 4,
-            [theme.breakpoints.up('md')]: {
-              backgroundColor: 'blue',
-            },
-          })}
-          >
-          <div>{isSmallScreen ? 'Small screen' : 'Large screen'}</div>
-          <div>{isSmallScreen ? 'Small screen' : 'Large screen'}</div>
-        </Box>
-      </Container> */}
       <Responsive>
       <Typography variant='h2'>
         Media Query
@@ -68,51 +45,3 @@ const OurGrowth = () => {
 };
 
 export default OurGrowth;
-
-
-// import React from 'react'
-// import { useTheme } from '@mui/material/styles';
-// import useMediaQuery from '@mui/material/useMediaQuery';
-
-// const OurGrowth = () => {
-//   const theme = useTheme();
-//   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-
-//   return (
-//    <>
-//        <Container sx={{
-//       paddingTop:12,
-//       alignItems:'center',
-//     }}>
-
-
-//       <Box
-//          sx={(theme) => ({
-//           display: 'flex',
-//           flexDirection: 'column',
-//           alignItems: 'center',
-//           gap: 2,
-//           padding: 4,
-//           border: '2px solid #ccc',
-//           borderRadius: 4,
-//           height: '40rem',
-//           width: '60rem',
-//           backgroundColor: 'white',
-//           boxShadow: 4,
-//           [theme.breakpoints.up('md')]: {
-//             backgroundColor: 'blue',
-//           },
-//           })}
-//       >
-//          <div>
-//         {isSmallScreen ? "Small screen" : "Large screen"}
-//       </div>
-//       </Box>
-//     </Container>
-//     </>
-//   );
-// };
-
-
-
-// export default OurGrowth;

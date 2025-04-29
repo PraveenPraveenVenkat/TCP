@@ -1,18 +1,7 @@
-import HomeIcon from '@mui/icons-material/Home';
-import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import EmailIcon from '@mui/icons-material/Email';
-import FlakyIcon from '@mui/icons-material/Flaky';
-import Groups2Icon from '@mui/icons-material/Groups2';
-import AddLocationAltSharpIcon from '@mui/icons-material/AddLocationAltSharp';
-
-
-const Data = [
+                          //? Side Bar JSON
+export const Data = [
   {
     "title": "Home",
-    icon: <HomeIcon />,
-    icon1:<ArrowDropDownIcon/>,
     "path": "/Home",
     "subMenu": [
       { "title": "Project", "path":"/Project", },
@@ -22,8 +11,6 @@ const Data = [
  
   {
     "title": "About Us",
-    icon: <Groups2Icon/>,
-    icon1:<ArrowDropDownIcon/>,
     "path": "/about",
     "subMenu": [
       { "title": "Our Growth", "path": "/OurGrowth" },
@@ -33,8 +20,6 @@ const Data = [
 
   {
     "title": "Services",
-    icon: <SupportAgentIcon />,
-    icon1:<ArrowDropDownIcon/>,
     "path": "/services",
     "subMenu": [
       { "title": "Web Development", "path": "/WebDevelopment" },
@@ -44,8 +29,6 @@ const Data = [
   },
   {
     "title": "Contact",
-    icon: <PermContactCalendarIcon />,
-    icon1:<ArrowDropDownIcon/>,
     "path": "/contact",
     "subMenu": [
       { "title": "LinkedIN", "path": "/Linkedin" },
@@ -55,19 +38,13 @@ const Data = [
 
   {
     "title": "Mail",
-    icon:<EmailIcon/>,
-    icon1:<ArrowDropDownIcon/>,
     "subMenu": [
       { "title": "Mail", "path": "/Mail" },
       { "title": "Website", "path": "/services/app" },
     ]
-
-
   },
   {
     "title": "Review",
-    icon:<FlakyIcon/>,
-    icon1:<ArrowDropDownIcon/>,
     "subMenu": [
       { "title": "Customer Review", "path": "/Customer Review" },
       { "title": "Website", "path": "/services/app" },
@@ -76,94 +53,120 @@ const Data = [
   },
   {
     "title": "Location",
-    icon :< AddLocationAltSharpIcon />,
-    icon1:<ArrowDropDownIcon/>,
     "subMenu": [
       { "title": "CBE", "path": "/services/web" },
       { "title": "Chennai", "path": "/services/app" },
     ]
-    
   }
 ];
 
 
 
-
-
-const services = [
+              //? Home  Page Services
+    
+export const services = [
   {
     title: 'Web Development',
     image: 'https://vdigtech.com/wp-content/uploads/2024/03/Image-20.jpg',
+    icon:"https://vdigtech.com/wp-content/uploads/2024/03/development-1.png",
     alt: 'Web Dev',
     bgColor: '#77feb8',
   },
   {
     title: 'App Development',
     image: 'https://vdigtech.com/wp-content/uploads/2024/03/Image-21.jpg',
+    icon:"https://vdigtech.com/wp-content/uploads/2024/03/XMLID_1809_.png",
     alt: 'App Dev',
   },
   {
     title: 'Digital Marketing',
     image: 'https://vdigtech.com/wp-content/uploads/2024/03/Image-27.jpg',
+    icon:"https://vdigtech.com/wp-content/uploads/2024/03/brainstorming-1.png",
     alt: 'Digital Marketing',
   },
   {
     title: 'Website Maintenance',
     image: 'https://vdigtech.com/wp-content/uploads/2024/03/Image-24.jpg',
+    icon:"https://vdigtech.com/wp-content/uploads/2024/03/branding-1.png",
     alt: 'Website Maintenance',
   },
   {
     title: 'SEO & Analytics',
     image: 'https://vdigtech.com/wp-content/uploads/2024/03/Untitled-design-2.png',
+    icon:"https://vdigtech.com/wp-content/uploads/2024/03/Group-1-2.png",
     alt: 'SEO & Analytics',
   },
   {
     title: 'Graphic Design',
     image: 'https://vdigtech.com/wp-content/uploads/2024/03/Untitled-design-1.png',
+    icon:"https://vdigtech.com/wp-content/uploads/2024/03/optimization-1.png",
     alt: 'Graphic Design',
   },
 ]
 
 
-const Rows = [
+                             //? Home  Page 2 Grid
+
+ export const steps = [
+  {
+    step: 'Step 01',
+    title: 'Web Inspection',
+    desc: 'Proper inspection of a website with the best tools for the next stage.',
+    bgColor: '#172146',
+    color: 'white',
+  },
+  {
+    step: 'Step 02',
+    title: 'Deep Optimization',
+    desc: 'Optimizing the website with special strategies by covering all its needs.',
+    bgColor: '#77feb8',
+    color: 'black',
+  },
+  {
+    step: 'Step 03',
+    title: 'Analyze Growth',
+    desc: 'Expert analysis of website data for deploying a strategy for further growth.',
+    bgColor: '#172146',
+    color: 'white',
+  },
+];
+                                   //? Projects Table JSON
+                          
+export const Rows = [
   { "food":"Frozen yoghurt", 
     "Calories":159, 
     "fat":6.0,
     "Carbs": 24 , 
     "Protein" :4.0,
-
   },
   { "food":"Ice cream sandwich", 
     "Calories": 237, 
     "fat":9.0,
     "Carbs": 37 , 
     "Protein":4.3,
-
   },
   { "food":"Eclair", 
     "Calories":262, 
     "fat":16,
     "Carbs":24, 
     "Protein" :6.0,
-
   },
   { "food":"Cupcake", 
     "Calories":356, 
     "fat":3.7,
     "Carbs":64 , 
     "Protein":4.3,
-
   },
   { "food":"Gingerbread", 
     "Calories":519, 
     "fat":6.0,
     "Carbs": 24 , 
     "Protein":3.9,
-
   },
 
 
 ];
 
 
-export default Data;
+
+

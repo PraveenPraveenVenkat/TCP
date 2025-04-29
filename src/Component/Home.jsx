@@ -5,17 +5,21 @@ import {
   Box, 
   ThemeProvider, 
   Divider, 
-  Container, 
+  Container,
+  Stack, 
   useMediaQuery 
 } from '@mui/material';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { createTheme } from '@mui/material/styles';
-import { styled } from '@mui/system';
+import { styled, width } from '@mui/system';
 import { useState } from 'react';
 import { keyframes } from "@emotion/react";
-// import Data from './ services';
+import {services} from "./Data.js";
+import {steps} from "./Data.js";
+
 
 
 // Create a responsive theme with custom breakpoints
@@ -55,6 +59,7 @@ const ServiceBox = styled(Box)(({ theme, bgColor }) => ({
   border: '2px solid #ccc',
   padding: '1rem',
   height: '19rem',
+  width:'16rem',
   borderRadius: '8px',
   gap: '1rem',
   textAlign: 'center',
@@ -69,9 +74,28 @@ const ServiceBox = styled(Box)(({ theme, bgColor }) => ({
     padding: '0.5rem',
   },
   [theme.breakpoints.down('sm')]: {
-    height: '14rem',
+    height: '19rem',
   },
 }));
+   const StyledButton = styled(Button)(({ theme }) => ({
+        border: '2px solid white',
+        color: 'white',
+        height: '55px',
+        width: '10rem',
+        borderRadius: '8px',
+        transition: 'all 0.3s ease',
+        '&:hover': {
+          backgroundColor: '#77feb8',
+          color: 'black',
+          transform: 'translateY(-3px)',
+        },
+        [theme.breakpoints.down('sm')]: {
+          width: '8rem',
+          height: '45px',
+          fontSize: '0.8rem',
+        },
+      }));
+      
 
 const ServiceImage = styled('img')({
   maxWidth: '100%',
@@ -94,86 +118,46 @@ const Home = () => {
   const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
   const isLaptop = useMediaQuery(theme.breakpoints.between('md', 'lg'));
 
-  const steps = [
-    {
-      step: 'Step 01',
-      title: 'Web Inspection',
-      desc: 'Proper inspection of a website with the best tools for the next stage.',
-      bgColor: '#172146',
-      color: 'white',
-    },
-    {
-      step: 'Step 02',
-      title: 'Deep Optimization',
-      desc: 'Optimizing the website with special strategies by covering all its needs.',
-      bgColor: '#77feb8',
-      color: 'black',
-    },
-    {
-      step: 'Step 03',
-      title: 'Analyze Growth',
-      desc: 'Expert analysis of website data for deploying a strategy for further growth.',
-      bgColor: '#172146',
-      color: 'white',
-    },
-  ];
-
   
-
-  const services = [
-    {
-      title: 'Web Development',
-      image: 'https://vdigtech.com/wp-content/uploads/2024/03/Image-20.jpg',
-      alt: 'Web Dev',
-      bgColor: '#77feb8',
-    },
-    {
-      title: 'App Development',
-      image: 'https://vdigtech.com/wp-content/uploads/2024/03/Image-21.jpg',
-      alt: 'App Dev',
-    },
-    {
-      title: 'Digital Marketing',
-      image: 'https://vdigtech.com/wp-content/uploads/2024/03/Image-27.jpg',
-      alt: 'Digital Marketing',
-    },
-    {
-      title: 'Website Maintenance',
-      image: 'https://vdigtech.com/wp-content/uploads/2024/03/Image-24.jpg',
-      alt: 'Website Maintenance',
-    },
-    {
-      title: 'SEO & Analytics',
-      image: 'https://vdigtech.com/wp-content/uploads/2024/03/Untitled-design-2.png',
-      alt: 'SEO & Analytics',
-    },
-    {
-      title: 'Graphic Design',
-      image: 'https://vdigtech.com/wp-content/uploads/2024/03/Untitled-design-1.png',
-      alt: 'Graphic Design',
-    },
-  ];
-
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="2xl" disableGutters sx={{ overflow: 'hidden' }}>
-  
 
-       
-     
-        <Box sx={{  color: 'white', pt: { xs: 12, sm: 6, md: 8, lg: 8 } }}>
+        {/* // Hero Section */}
+        <Box sx={{  color: 'white', pt: { xs: 4, sm: 6, md: 8, lg: 12 }, }}>
           <Container>
-            <Grid container spacing={3}>
+            <Grid container spacing={3} >
               <Grid item xs={12} md={6}>
                 <Typography variant="h1" sx={{
-                  fontSize: { xs: '3rem', sm: '3.5rem', md: '4.5rem', lg: '5.5rem' },
+                  fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem', lg: '5.5rem' },
                   fontWeight: 700,
                   mb: 3,
                 }}>
                   Best <br /> Place for Creative <br /> Digital Solution
                 </Typography>
                 
-             
+                <Typography variant="body1" sx={{
+                  fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem' },
+                  mb: 4,
+                }}>
+                  Unlock the Power of Web Presence with our <br />
+                  Professional Website Designing Service! Elevate <br/>
+                  Your Online Presence with Stunning Website <br />
+                  Designs.
+                </Typography>
+                
+                <Stack 
+                  direction={{ xs: 'row', sm: 'row' }} 
+                  spacing={{ xs: 2, sm: 4 }}
+                  sx={{ mb: 6 }}
+                >
+                  <StyledButton>
+                    GET STARTED <TrendingFlatIcon sx={{ ml: 1 }} />
+                  </StyledButton>
+                  <StyledButton>
+                    ABOUT US <TrendingFlatIcon sx={{ ml: 1 }} />
+                  </StyledButton>
+                </Stack>
               </Grid>
               
               <Grid item xs={12} md={6} sx={{ 
@@ -182,10 +166,60 @@ const Home = () => {
                 alignItems: 'center' 
               }}>
                 {/* Placeholder for hero image */}
+                <Box sx={{ 
+                  bgcolor: '#333', 
+                  width: '100%', 
+                  height: '400px',
+                  borderRadius: '12px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  color: '#777',
+                }}>
+                 
+                 <img style={{ width: '7rem',height:'7rem' }} src='https://vdigtech.com/wp-content/uploads/2024/03/banner_home02-DD9Q8T2.jpg' alt='Banner'/>
+
+
+                </Box>
               </Grid>
             </Grid>
           </Container>
         </Box>
+
+  <Box>
+   <Container>
+    <Grid item={2} sx={{
+      backgroundColor:'#77feb8',
+      height:'30rem',
+      width:'40rem',
+
+    }}>
+      <Typography variant='h2' sx={{color:'black',marginLeft:'30rem',pt:4}}>250  </Typography>
+      <Typography variant='h5' sx={{color:'black',marginLeft:'30rem',pt:1}}>PROJECT  </Typography>
+      <Divider sx={{color:'black', fontWeight: 'bold',justifyContent:'end',}}/> 
+      <Typography variant='h2' sx={{color:'black',marginLeft:'30rem',pt:4}}>125  </Typography>
+      <Typography variant='h5' sx={{color:'black',marginLeft:'30rem',pt:1}}>CLIENTS </Typography>
+      <Divider sx={{color:'black', fontWeight: 'bold',width:"-40rem",}}/> 
+      <Typography variant='h2' sx={{color:'black',marginLeft:'30rem',pt:4}}>25  </Typography>
+      <Typography variant='h5' sx={{color:'black',marginLeft:'30rem',pt:1}}>EXPERTS </Typography>
+      <Divider sx={{color:'black', fontWeight: 'bold',width:"-40rem",}}/> 
+
+         {/* //? Left Side Image */}
+    <Grid>
+    <img style={{ width: '26.6rem',height:'27.6rem',marginTop:'-27rem',marginLeft:'1rem' }} src='https://vdigtech.com/wp-content/uploads/2024/03/person_home02-USU94UZ.png'  
+    />
+      
+    </Grid>
+    {/* <Grid sx={{backgroundColor:'white',height:'12rem'}}>  
+
+    </Grid> */}
+    </Grid>
+
+ 
+   </Container>
+  </Box>
+
+
 
         {/* Services Section */}
         <Box sx={{ py: { xs: 6, md: 12 } }}>
@@ -221,6 +255,7 @@ const Home = () => {
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
                   <ArrowOutwardIcon sx={{ color: service.bgColor ? 'black' : 'inherit' }} />
                 </Box>
+                <ServiceImage src={service.icon} sx={{width:'4rem',height:"4rem",mr:15}}/>
                 <Typography
                   variant="h6"
                   sx={{
@@ -277,13 +312,13 @@ const Home = () => {
             <Grid container spacing={4}>
               <Grid item xs={12} md={6}>
                 <Typography variant='h3' sx={{ 
-                  fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.5rem' },
+                  fontSize: { xs: '2rem', sm: '2.2rem', md: '2.5rem',lg:'3rem', },
                   mb: 3,
                 }}>
                   One-stop digital marketing <br/> services 🎯
                 </Typography>
                 
-                <Typography variant='body1' sx={{ mb: 4 }}>
+                <Typography variant='body1' sx={{ mb: 4, pt:'2rem',fontSize: { lg:'1.2rem',}}}>
                   Get benefits with the best Digital Marketing Service with unique<br/> 
                   strategies. Improve the search visibility of your website with <br/>
                   the proper techniques of our digital marketing experts. Boost sales <br/> 
@@ -292,19 +327,21 @@ const Home = () => {
                 
                 <Grid container spacing={2} item={3}>
                   {['CONVERSION', 'OPTIMIZATION', 'ECOMMERCE', 'ANALYTIC', 'LINK BUILDING', 'STRATEGY'].map((text) => (
-                    <Grid item xs={6} sm={4} key={text}>
+                    <Grid item xs={8} sm={8}md={8} lg={6} key={text} sx={{ pt:'2rem',}}>
                       <Button 
                         sx={{
                           backgroundColor: "white",
                           color: 'black',
-                          height: { xs: '3rem', md: '4rem' },
-                          width: '100%',
-                          borderRadius: '24px',
+                          height: { xs: '5rem', md: '5rem' },
+                          width: '10rem',
+                          borderRadius: '50px',
+                         
                           fontSize: { xs: '0.7rem', sm: '0.8rem', md: '0.9rem' },
                           whiteSpace: 'nowrap',
                           '&:hover': {
                             backgroundColor: '#77feb8',
                           },
+                          fontWeight: 'bold',
                         }}
                       >
                         {text}
@@ -314,13 +351,13 @@ const Home = () => {
                 </Grid>
               </Grid>
               
-              <Grid item xs={12} md={6} sx={{ 
+              {/* <Grid item xs={12} md={6}lg={4}sx={{ 
                 display: { xs: 'none', md: 'flex' },
                 justifyContent: 'center',
                 alignItems: 'center'
               }}>
                 {/* Placeholder for marketing image */}
-                <Box sx={{ 
+                {/* <Box sx={{ 
                   bgcolor: '#f5f5f5', 
                   width: '100%', 
                   height: '400px',
@@ -332,60 +369,18 @@ const Home = () => {
                 }}>
                   Marketing Image Placeholder
                 </Box>
-              </Grid>
-            </Grid>
+              </Grid> */}
+            </Grid> 
           </Container>
         </Box>
 
-        {/* Process Steps Section */}
-        {/* <Box sx={{ py: { xs: 6, md: 8 ,lg:6},  }}>
-          // <Container>
-          //   <Grid container spacing={6}>
-          //     {steps.map((step, index) => (
-          //       <Grid item xs={12} sm={6} md={4} lg={6} key={index}>
-          //         <Box
-          //           sx={{
-          //             backgroundColor: step.bgColor,
-          //             color: step.color,
-          //             borderRadius: '16px',
-          //             padding: 4,
-          //             minHeight: { xs: 'auto', md: '18rem' },
-          //             boxShadow: 4,
-          //             transition: 'transform 0.3s',
-          //             '&:hover': {
-          //               transform: 'translateY(-5px)',
-          //             },
-          //           }}
-          //         >
-          //           <Typography variant="subtitle1" sx={{ opacity: 0.7, fontWeight: 600 }}>
-          //             {step.step}
-          //           </Typography>
-          //           <Typography variant="h5" sx={{ fontWeight: 'bold', my: 1 }}>
-          //             {step.title}
-          //           </Typography>
-          //           <Divider
-          //             sx={{
-          //               backgroundColor: step.color === 'white' ? '#ffffffaa' : '#00000088',
-          //               width: '100%',
-          //               mb: 2,
-          //             }}
-          //           />
-          //           <Typography variant="body2" sx={{ lineHeight: 1.6 }}>
-          //             {step.desc}
-          //           </Typography>
-          //         </Box>
-          //       </Grid>
-          //     ))}
-          //   </Grid>
-          // </Container>
-        </Box> */}
-
+ 
 
         <box>
         <Container>
-            <Grid container spacing={6} item={3}>
+            <Grid container spacing={6} item={4}>
               {steps.map((step, index) => (
-                <Grid item xs={4} sm={6} md={8} lg={12} key={index}>
+                <Grid item xs={4} sm={6} md={8} lg={12} key={index}  direction={{ xs: 'row', sm: 'row',lg:'' }} >
                   <Box
                     sx={{
                       backgroundColor: step.bgColor,
@@ -409,7 +404,7 @@ const Home = () => {
                     <Divider
                       sx={{
                         backgroundColor: step.color === 'white' ? '#ffffffaa' : '#00000088',
-                        width: '100%',
+                        width: '60%',
                         mb: 2,
                       }}
                     />

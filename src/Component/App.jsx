@@ -33,7 +33,8 @@ function AppLayout() {
   return (
     <>
     
-      {/* ✅ Conditionally show Header */}
+                                                                  {/* //? Removing  Header And Footer in Pages */}
+
       {!hideHeaderOnRoutes.includes(location.pathname) && <Header />}
       {!hideFoter.includes(location.pathname) && <Footer />}
       
@@ -41,6 +42,7 @@ function AppLayout() {
         <button onClick={notify}>Notify!</button> */}
         <ToastContainer />
       {/* </div> */}
+                                                               {/* //? Routing */}
       <Routes>
         <Route path="/" element={<First/>} />
         <Route path="/Project" element={<Project />} />
@@ -78,64 +80,3 @@ export default App;
 // https://vdigtech.com/app-development/
 // https://uicolors.app/
 //https://images.pexels.com/photos/941195/pexels-photo-941195.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
-
-
-
-
-
-
-
-             {/* <Grid container spacing={3} columnGap={2} sx={{paddingLeft:"20rem",gap:14,paddingTop:"12rem",}}> */}
-                    {/* //?Container 1 */}
-              {/* <Grid item xs={3}>
-                <Box sx={{backgroundColor:"#172146",height:'15rem',width:'17rem',}}>
-                  <Typography variant='p'>
-                           Step 01
-                  </Typography>
-                  <Typography variant='h5'>
-                        Web Inspection
-                  </Typography>
-                  <Divider sx={{color:'white',width:'10rem',}}/>
-                  <Typography variant='p'>
-                  Proper inspection of a website with <br/>the best tools for the next stage.
-                  </Typography>
-                </Box>
-
-            </Grid> */}
-                  {/* //?Container 2 */}
-            {/* <Grid item xs={3}>
-                <Box sx={{backgroundColor:"#77feb8",height:'15rem',width:'17rem', color:'black'}}>
-                  <Typography variant='p'>
-                  Step 02
-                  </Typography>
-                  <Typography variant='h5'>
-                  Deep Optimization
-                  </Typography>
-                  <Divider sx={{color:'white',width:'10rem',}}/>
-                  <Typography variant='p'>
-                 
-Optimizing the website with special strategies by covering all its needs
-                  </Typography>
-                </Box>
-
-            </Grid> */}
-
-
-              {/* //?Container 3 */}
-            {/* <Grid item xs={3}>
-                <Box sx={{backgroundColor:"#172146",height:'15rem',width:'17rem',}}>
-                  <Typography variant='p'>
-                  Step 03
-                  </Typography>
-                  <Typography variant='h5'>
-                  Analyze Growth
-                  </Typography>
-                  <Divider sx={{color:'white',width:'10rem',}}/>
-                  <Typography variant='p'>
-                  Expert analysis of website data for deploying a strategy for further growth.
-                  </Typography>
-                </Box>
-
-            </Grid>
-            
-            </Grid> */}
