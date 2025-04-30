@@ -1,54 +1,132 @@
-
-import React, { useEffect, useState } from 'react';
-import { Container, Table, TableBody, TableContainer, TableHead, TableRow, TableCell, TextField, Button, Grid, Typography } from '@mui/material';
-import Paper from '@mui/material/Paper';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import { Rows } from './Data.js';
+import React, { useEffect, useState } from "react";
+import {
+  Container,
+  Table,
+  TableBody,
+  TableContainer,
+  TableHead,
+  TableRow,
+  TableCell,
+  TextField,
+  Button,
+  Grid,
+  
+} from "@mui/material";
+import Paper from "@mui/material/Paper";
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogTitle from '@mui/material/DialogTitle';
+import EditIcon from "@mui/icons-material/Edit";
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import { Rows } from "./Data.js";
 
 
 const Project = () => {
+
+    const [open,setOpen]=useState(false);
+
+    const handleClickOpen =()=>{
+     setOpen(true);
+    };
+    const handleClose =()=>{
+      setOpen(false);
+          };
+
+
   // const [data,setData]=useState();
 
+  useEffect(() => {
+    //   const url = 'https://calorie-calculator.p.rapidapi.com/caloriecalculator.php';
+    // const options = {
+    // 	method: 'GET',
+    // 	headers: {
+    // 		'x-rapidapi-host': 'calorie-calculator.p.rapidapi.com'
+    // 	}
+    // };
 
+    // try {
+    //   return response.json();
+    // 	const response = await fetch(url, options);
+    // 	const result = await response.text();
+    // 	console.log(result);
+    // } catch (error) {
+    // 	console.error(error);
+    // }
 
-useEffect (()=>{
-
-//   const url = 'https://calorie-calculator.p.rapidapi.com/caloriecalculator.php';
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'x-rapidapi-host': 'calorie-calculator.p.rapidapi.com'
-// 	}
-// };
-
-
-// try {
-//   return response.json();
-// 	const response = await fetch(url, options);
-// 	const result = await response.text();
-// 	console.log(result);
-// } catch (error) {
-// 	console.error(error);
-// }
-
-// fetch('https://calorie-calculator.p.rapidapi.com/caloriecalculator.php')
-fetch('https://jsonplaceholder.typicode.com/posts')
-         .then(Response => Response.json())
-         .then(data=>console.log(data))
-         .catch(error =>console.log('Error' ,error))
-
-
-}, [] );
+    // fetch('https://calorie-calculator.p.rapidapi.com/caloriecalculator.php')
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((Response) => Response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log("Error", error));
+  }, []);
 
   return (
     <>
-      <Container sx={{ bgcolor: 'white', mt: 3, minWidth: '65rem', height: '42rem', borderRadius: 5 }}>
-        <TextField id="outlined-basic" label="Food" variant="outlined" sx={{ mt: 2 }} /> 
-        <Button variant="contained" sx={{ mt: 3, px: 4, mx: 5 }}>Add</Button> 
+      <Container
+        sx={{
+          bgcolor: "white",
+          mt: 3,
+          minWidth: "65rem",
+          height: "42rem",
+          borderRadius: 5,
+        }}
+      >
+        <TextField
+          id="outlined-basic"
+          label="Food"
+          variant="outlined"
+          sx={{ mt: 2 }}
+        />
+        <Button variant="contained" sx={{ mt: 3, px: 4, mx: 5 }} onClick={handleClickOpen}>
+          Add
+        </Button>
+
+
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        slotProps={{
+          paper: {
+            component: 'form',
+            onSubmit: (event) => {
+              event.preventDefault();
+              const formData = new FormData(event.currentTarget);
+              const formJson = Object.fromEntries(formData.entries());
+              const email = formJson.email;
+              console.log(email); // log the email
+              handleClose();
+            },
+          },
+        }}
+      >
+        <DialogTitle>Subscribe</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            To subscribe to this website, please enter your email address here. We
+            will send updates occasionally.
+          </DialogContentText>
+          <TextField
+            autoFocus
+            required
+            margin="dense"
+            id="name"
+            name="email"
+            label="Email Address"
+            type="email"
+            fullWidth
+            variant="standard"
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button type="submit">Subscribe</Button>
+        </DialogActions>
+      </Dialog>
 
         <TableContainer component={Paper}>
-          <Table sx={{ height: '2rem' }} aria-label="simple table">
+          <Table sx={{ height: "2rem" }} aria-label="simple table">
             <TableHead>
               <TableRow>
                 <TableCell>Food (100g serving)</TableCell>
@@ -61,8 +139,13 @@ fetch('https://jsonplaceholder.typicode.com/posts')
             </TableHead>
             <TableBody>
               {Rows.map((item) => (
-                <TableRow key={item.food} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                  <TableCell component="th" scope="row">{item.food}</TableCell>
+                <TableRow
+                  key={item.food}
+                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                >
+                  <TableCell component="th" scope="row">
+                    {item.food}
+                  </TableCell>
                   <TableCell align="right">{item.Calories}</TableCell>
                   <TableCell align="right">{item.fat}</TableCell>
                   <TableCell align="right">{item.Carbs}</TableCell>
@@ -70,12 +153,15 @@ fetch('https://jsonplaceholder.typicode.com/posts')
                   <TableCell align="right">
                     <Grid container spacing={1} justifyContent="flex-start">
                       <Grid item>
-                        <Button variant="contained" sx={{ bgcolor: '#00b600', pl: 2 }}>
+                        <Button
+                          variant="contained"
+                          sx={{ bgcolor: "#00b600", pl: 2 }}
+                        >
                           <EditIcon />
                         </Button>
                       </Grid>
                       <Grid item>
-                        <Button variant="contained" sx={{ bgcolor: '#cf040c' }}>
+                        <Button variant="contained" sx={{ bgcolor: "#cf040c" }}>
                           <DeleteOutlineIcon />
                         </Button>
                       </Grid>
@@ -87,11 +173,11 @@ fetch('https://jsonplaceholder.typicode.com/posts')
           </Table>
         </TableContainer>
       </Container>
-     {/* <Typography>
+      {/* <Typography>
      {data}
      </Typography> */}
     </>
   );
-}
+};
 
 export default Project;
