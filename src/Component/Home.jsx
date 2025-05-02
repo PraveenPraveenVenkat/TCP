@@ -478,60 +478,67 @@ const Home = () => {
           </Container>
         </Box>
 
-        <box>
-          <Container>
-            <Grid container spacing={6} item={4}>
-              {steps.map((step, index) => (
-                <Grid
-                  item
-                  xs={4}
-                  sm={6}
-                  md={8}
-                  lg={12}
-                  key={index}
-                  direction={{ xs: "row", sm: "row", lg: "" }}
+        <Box>
+          <Grid
+            container
+            spacing={3}
+            justifyContent="center"
+            sx={{ gap: "6rem" }}
+          >
+            {steps.map((step, index) => (
+              <Grid
+                item
+                xs={12}
+                sm={4}
+                md={4}
+                key={index}
+                sx={{
+                  backgroundColor: "#77feb8",
+                  height: "17rem",
+                  width: "18rem",
+                }}
+              >
+                <Typography
+                  variant="h5"
+                  sx={{ color: "black", pt: "2rem", pl: "6rem" }}
                 >
-                  <Box
-                    sx={{
-                      backgroundColor: step.bgColor,
-                      color: step.color,
-                      borderRadius: "16px",
-                      padding: 4,
-                      minHeight: { xs: "auto", md: "18rem" },
-                      boxShadow: 4,
-                      transition: "transform 0.3s",
-                      "&:hover": {
-                        transform: "translateY(-5px)",
-                      },
-                    }}
-                  >
-                    <Typography
-                      variant="subtitle1"
-                      sx={{ opacity: 0.7, fontWeight: 600 }}
-                    >
-                      {step.step}
-                    </Typography>
-                    <Typography variant="h5" sx={{ fontWeight: "bold", my: 1 }}>
-                      {step.title}
-                    </Typography>
-                    <Divider
-                      sx={{
-                        backgroundColor:
-                          step.color === "white" ? "#ffffffaa" : "#00000088",
-                        width: "60%",
-                        mb: 2,
-                      }}
-                    />
-                    <Typography variant="body2" sx={{ lineHeight: 1.6 }}>
-                      {step.desc}
-                    </Typography>
-                  </Box>
-                </Grid>
-              ))}
-            </Grid>
-          </Container>
-        </box>
-
+                  {step.step}
+                </Typography>
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontWeight: "bold",
+                    my: 1,
+                    color: "black",
+                    pt: "0.5rem",
+                    pl: "4rem",
+                  }}
+                >
+                  {step.title}
+                </Typography>
+                <Divider
+                  sx={{
+                    backgroundColor:
+                      step.color === "white" ? "#ffffffaa" : "#00000088",
+                    width: "0%",
+                    mb: 2,
+                  }}
+                />
+                <Typography
+                  variant="body2"
+                  sx={{
+                    lineHeight: 1.6,
+                    color: "black",
+                    pt: "2rem",
+                    alignItems: "center",
+                  }}
+                >
+                  {step.desc}
+                </Typography>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
         {/* E-commerce FAQ Section */}
         <Box sx={{ py: { xs: 6, md: 10 } }}>
           <Container>

@@ -35,6 +35,21 @@ function AppLayout() {
     },
   });
 
+  // const items =[
+
+  //   {
+  //     id:"1",
+  //     food:"Cupcake",
+  //     calories:"159",
+  //   },
+  //   {
+  //     id:"2",
+  //     food:"ice cream",
+  //     calories:"237",
+  //   },
+
+  // ]
+
   return (
     <>
       {/* //? Removing  Header And Footer in Pages */}
@@ -49,6 +64,7 @@ function AppLayout() {
       {/* //? Routing */}
       <Routes>
         <Route path="/" element={<First />} />
+        {/* items={items} in Project props */}
         <Route path="/Project" element={<Project />} />
         <Route path="/Teams" element={<Teams />} />
         <Route path="/Home" element={<Home />} />
