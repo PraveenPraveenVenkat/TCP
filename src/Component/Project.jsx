@@ -16,6 +16,7 @@ import {
   ListItem,
   ListItemText,
   Box,
+  ListItemIcon,
 } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import Dialog from "@mui/material/Dialog";
@@ -55,22 +56,57 @@ const Project = (props) => {
   const [food, setFood] = useState("");
   const [auto, setAuto] = useState(0);
   const [data, setData] = useState([]);
+  const [edit, setEdit] = useState(null);
 
   const handleAdd = () => {
-    if (food) {
+    if (!food) return;
+
+    if (edit !== null) {
+      // We're editing an existing item
+      const updatedItems = [...items];
+      updatedItems[edit] = { ...updatedItems[edit], food };
+      setItems(updatedItems);
+      setEdit(null);
+    } else {
+      // We're adding a new item
       const newItem = {
-        id: setAuto(auto + 1),
+        id: auto + 1,
         food,
       };
-
-      const updatedItems = [...items, newItem];
-      setItems(updatedItems);
-      setFood("");
-      // setCalories('');
-
-      console.log("Added item:", newItem);
-      console.log("All items:", updatedItems);
+      setItems([...items, newItem]);
+      setAuto(auto + 1);
     }
+
+    setFood("");
+  };
+
+  // const handleAdd = () => {
+  //   if (food) {
+  //     const newItem = {
+  //       id: setAuto(auto + 1),
+  //       food,
+  //     };
+
+  //     const updatedItems = [...items, newItem];
+  //     setItems(updatedItems);
+  //     setFood("");
+  //     // setCalories('');
+
+  //     console.log("Added item:", newItem);
+  //     console.log("All items:", updatedItems);
+  //   }
+  // };
+  const handleDelete = (index) => {
+    setItems(items.filter((_, i) => i !== index)); // Correct comparison: i !== index
+  };
+  //  const  handleEdit =(index) =>{
+  //    setData(food[index]);
+  //    setEdit(null);
+  //  }
+  const handleEdit = (index) => {
+    const itemToEdit = items[index];
+    setFood(itemToEdit.food);
+    setEdit(index); // Save the index we're editing
   };
 
   // Optional: map over props.items if passed in
@@ -85,13 +121,6 @@ const Project = (props) => {
   //  console.log(items);
 
   useEffect(() => {
-    // fetch( 'https://food-calories1.p.rapidapi.com/categories/Pork/foods')
-    // .then((res)=>res.json())
-    // .then((data)=>console.log(data))
-
-    // const api=axios.create({
-    //   baseURL:
-    // })
     // ?Get Method
     const fetchData = async () => {
       try {
@@ -107,22 +136,16 @@ const Project = (props) => {
       try {
         const newItem = { name: "NewItem" };
         const response = await axios.post(
-          "https://dummyjson.com/recipes",
+          "http://localhost:3000/recipes",
           newItem
         );
         console.log(`Item added:`, response.data);
       } catch (error) {
         console.log(`error item:`, error);
-        // console.log('Error adding item:', error);
         addItem();
       }
     };
   }, []);
-  console.log(data);
-
-  //   const listFromProps=props.items.map((item)=>{
-  //  console.log(item)}
-  //   )
 
   return (
     <Container sx={{ backgroundColor: "white", padding: 4 }}>
@@ -134,10 +157,14 @@ const Project = (props) => {
         onChange={(e) => setFood(e.target.value)}
       />
       <Button variant="contained" sx={{ mt: 3 }} onClick={handleAdd}>
-        Add
+        {edit !== null ? "Update" : "Add"}
       </Button>
+
+      {/* <Button variant="contained" sx={{ mt: 3 }} onClick={handleAdd}>
+        Add
+      </Button> */}
       {/* //? List from local state  */}
-      {items.map((item) => (
+      {items.map((item, index) => (
         <Box
           className="item"
           key={item.id}
@@ -149,8 +176,12 @@ const Project = (props) => {
             </Box>
             <Box style={{ color: "black" }}>{item.calories}</Box>
             <DeleteIcon
-              onClick={() => deleteItem(item.id)}
+              onClick={() => handleDelete(index)}
               sx={{ color: "red", paddingLeft: "60rem" }}
+            />
+            <EditIcon
+              sx={{ color: "#22b8e3", gap: "12" }}
+              onClick={() => handleEdit(index)}
             />
           </Box>
         </Box>
@@ -165,6 +196,18 @@ const Project = (props) => {
               primary={recipe.name}
               secondary={`Cuisine: ${recipe.cuisine} | Calories: ${recipe.caloriesPerServing}| servings:${recipe.servings}| mealType:${recipe.mealType}`}
             />
+            <ListItemIcon>
+              <img
+                src={recipe.image}
+                alt={recipe.names}
+                style={{ width: "100px", height: "100px", objectFit: "cover" }}
+              />
+            </ListItemIcon>
+            {/* <ListItemText sx={{paddingTop:'1',justifyContent:'left'}}> {
+          recipe.rating}
+          
+
+</ListItemText> */}
           </ListItem>
         ))}
       </List>
