@@ -1,3 +1,55 @@
+// function SideBar({ open, onClose }) {
+//   const [openIndex, setOpenIndex] = useState(null);
+
+//   const iconMap = {
+//     Home: <HomeIcon />,
+//     PermContactCalendar: <PermContactCalendarIcon />,
+//     SupportAgent: <SupportAgentIcon />,
+//     Email: <EmailIcon />,
+//     Flaky: <FlakyIcon />,
+//     Groups2: <Groups2Icon />,
+//     AddLocationAltSharp: <AddLocationAltSharpIcon />,
+//   };
+
+//   const handleToggle = (index) => {
+//     setOpenIndex(openIndex === index ? null : index);
+//   };
+
+//   return (
+//     <Drawer anchor="left" open={open} onClose={onClose}>
+//       <Box sx={{ width: 250 }} role="presentation" onKeyDown={onClose}>
+//         <List>
+//           {Data.map((item, index) => (
+//             <div key={index}>
+//               <ListItemButton onClick={() => handleToggle(index)}>
+//                 <ListItemIcon>{iconMap[item.iconName]}</ListItemIcon>
+//                 <ListItemText primary={item.title} />
+//                 {item.subMenu && (
+//                   <ListItemIcon>
+//                     <ArrowDropDownIcon />
+//                   </ListItemIcon>
+//                 )}
+//               </ListItemButton>
+
+//               {openIndex === index && item.subMenu && (
+//                 <List component="div" disablePadding sx={{ pl: 4 }}>
+//                   {item.subMenu.map((subItem, subIndex) => (
+//                     <ListItem key={subIndex} disablePadding>
+//                       <ListItemButton component={Link} to={subItem.path}>
+//                         <ListItemText primary={subItem.title} />
+//                       </ListItemButton>
+//                     </ListItem>
+//                   ))}
+//                 </List>
+//               )}
+//             </div>
+//           ))}
+//         </List>
+//         <Divider />
+//       </Box>
+//     </Drawer>
+//   );
+// }
 
 
 import React, { useState } from 'react';
