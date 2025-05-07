@@ -22,6 +22,7 @@ import First from "./First";
 import WebDevelopment from "./WebDevelopment";
 import AppDevelopment from "./AppDevelopment";
 import Architect from "./Architect";
+import  FAQ from './FAQ';
 
 function AppLayout() {
   const location = useLocation();
@@ -77,6 +78,7 @@ function AppLayout() {
         <Route path="/WebDevelopment" element={<WebDevelopment />} />
         <Route path="/AppDevelopment" element={<AppDevelopment />} />
         <Route path="/Architect" element={<Architect />} />
+        <Route path="/FAQ" element={<FAQ />} />
       </Routes>
 
       <SideBar />
@@ -93,6 +95,95 @@ function App() {
 }
 
 export default App;
+
+
+// import React, { useState } from 'react';
+
+// // Creating an array of 100 items: ['Item 1', 'Item 2', ..., 'Item 100']
+// const items = Array.from({ length: 100 }, (_, i) => ` ${i + 1}`);
+
+// // Defining the functional component named PaginationExample
+// const PaginationExample = () => {
+
+//   // useState hook to track the current page number. Initial value is 1.
+//   const [currentPage, setCurrentPage] = useState(1);
+
+//   // Number of items to display per page
+//   const itemsPerPage = 10;
+
+//   // Total number of pages = total items / items per page, rounded up
+//   const totalPages = Math.ceil(items.length / itemsPerPage);
+
+//   // Calculate the starting index of the current page
+//   const start = (currentPage - 1) * itemsPerPage;
+
+//   // Get the current page items by slicing the main items array
+//   const currentItems = items.slice(start, start + itemsPerPage);
+
+//   // Function to change the page number when a page button is clicked
+//   const goToPage = (page) => {
+//     setCurrentPage(page);
+//   };
+
+//   // Return JSX to render UI
+//   return (
+//     <div>
+//       {/* Title */}
+//       <h3>Paginated List</h3>
+
+//       {/* List of items for the current page */}
+//       <ul>
+//         {currentItems.map((item) => (
+//           <li key={item}>{item}</li>  // Render each item as an <li> element with a unique key
+//         ))}
+//       </ul>
+
+//       {/* Pagination controls */}
+//       <div>
+//         {/* Previous button: disabled on the first page */}
+//         <button
+//           disabled={currentPage === 1}
+//           onClick={() => goToPage(currentPage - 1)}
+//         >
+//           Prev
+//         </button>
+
+//         {/* Buttons for each page */}
+//         {Array.from({ length: totalPages }, (_, i) => (
+//           <button
+//             key={i + 1}  // Unique key for React list rendering
+//             onClick={() => goToPage(i + 1)}  // Go to that page on click
+//             style={{ fontWeight: currentPage === i + 1 ? 'bold' : 'normal' }}  // Highlight current page
+//           >
+//             {i + 1}
+//           </button>
+//         ))}
+
+//         {/* Next button: disabled on the last page */}
+//         <button
+//           disabled={currentPage === totalPages}
+//           onClick={() => goToPage(currentPage + 1)}
+//         >
+//           Next
+//         </button>
+//       </div>
+//     </div>
+//   );
+// };
+
+// // Export the component so it can be used in other files
+// export default PaginationExample;
+
+
+
+
+
+
+
+
+
+
+
 
 // https://clinicalvisuals.com/
 // https://vdigtech.com/app-development/

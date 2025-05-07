@@ -12,7 +12,15 @@ import MailOutlineTwoToneIcon from "@mui/icons-material/MailOutlineTwoTone";
 import PhoneTwoToneIcon from "@mui/icons-material/PhoneTwoTone";
 import MailRoundedIcon from "@mui/icons-material/MailRounded";
 import PersonIcon from "@mui/icons-material/Person";
-import { createTheme, styled, ThemeProvider } from "@mui/material/styles";
+import FileCopyIcon from '@mui/icons-material/FileCopy';
+import SaveIcon from '@mui/icons-material/Save';
+import PrintIcon from '@mui/icons-material/Print';
+import ShareIcon from '@mui/icons-material/Share';
+import SpeedDial from '@mui/material/SpeedDial';
+import { createTheme,  ThemeProvider } from "@mui/material/styles";
+import SpeedDialIcon from '@mui/material/SpeedDialIcon';
+import SpeedDialAction from '@mui/material/SpeedDialAction';
+
 
 //  ? Custom theme with breakpoints
 const theme = createTheme({
@@ -25,6 +33,14 @@ const theme = createTheme({
     },
   },
 });
+
+const actions = [
+  { icon: <FileCopyIcon />, name: 'Copy' },
+  { icon: <SaveIcon />, name: 'Save' },
+  { icon: <PrintIcon />, name: 'Print' },
+  { icon: <ShareIcon />, name: 'Share' },
+];
+
 
 const LinkedIN = () => {
   return (
@@ -160,8 +176,35 @@ const LinkedIN = () => {
               </Box>
             </Grid>
           </Grid>
+          
         </Box>
+        <Box sx={{ height: 3, transform: 'translateX(0px)', flexGrow: 1 }}>
+      <SpeedDial
+        ariaLabel="SpeedDial basic example"
+        sx={{ position: 'absolute', bottom: 16, right: 16 }}
+        icon={<SpeedDialIcon />}
+      >
+        {actions.map((action) => (
+          <SpeedDialAction
+            key={action.name}
+            icon={action.icon}
+            tooltipTitle={action.name}
+          />
+        ))}
+      </SpeedDial>
+    </Box>
+
       </Container>
+
+
+
+
+
+
+ 
+
+
+
     </ThemeProvider>
   );
 };

@@ -40,7 +40,7 @@ export const Data = [
     title: "Mail",
     iconName: "Email",
     subMenu: [
-      { title: "Mail", path: "/Mail" },
+      { title: "FAQ", path: "/FAQ" },
       { title: "Website", path: "/services/app" },
     ],
   },
