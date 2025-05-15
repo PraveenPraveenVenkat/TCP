@@ -72,7 +72,7 @@ function AppLayout() {
         <Route path="/OurGrowth" element={<OurGrowth />} />
         <Route path="/OurVision" element={<OurVision />} />
         <Route path="/LinkedIn" element={<LinkedIN />} />
-        <Route path="/ Website" element={<Website />} />
+        <Route path="/Website" element={<Website />} />
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/WebDevelopment" element={<WebDevelopment />} />
