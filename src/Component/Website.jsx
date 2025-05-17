@@ -6,22 +6,62 @@ import { Typography } from "@mui/material";
 
 const Website = () => {
 
-  const [data,setData]=useState([]);
+   const [products,setProducts]=useState([]);
 
   useEffect (()=>{
-    const fetchData =async () =>{
+
+    const fetchData = async () =>{
+
       try{
-        const data=await axios.get ("https://dummyjson.com/products");
-        // setData(response.data.)
-        console.log(data.title);
+        const res=await axios.get ("https://dummyjson.com/products");
+      
+        console.log(res.data.products);
+        setProducts(res.data.products)
       }catch (error){
         console.log('This Is A Error');
       }
     };
+    fetchData();
 
   },[])
 
-  // useEffect(() => {
+
+  return (
+      <>
+    
+    <div>
+<Typography variant="h2">
+  Product Deatils
+</Typography>
+
+  {products.map ((product)=>(
+  // <li  key={product.id} sx={{Color:'white'}}>{product.title}</li>
+  
+
+ 
+
+
+   <img src={product.thumbnail}/>
+   ))}
+
+
+   
+    </div>
+     </>
+  ); 
+};
+
+export default Website;
+
+
+
+
+
+
+
+
+
+// useEffect(() => {
   //   // ?Get Method
   //   const fetchData = async () => {
   //     try {
@@ -31,7 +71,6 @@ const Website = () => {
   //       console.log("Error fetching:", error);
   //     }
   //   };
-  return (
     // <div sx={{backgroundcolor:white}}>
     //   <>
     //     {/* <img style={{width:"100rem", height:"30%",}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc8SKpaoBT9EWK5cjkiXwD5BqMmHEVqwGnysRb5n8nr1dNDh4ANNV1uP4rjGjjakloPnQ&usqp=CAU"    alt="" /> */}
@@ -75,12 +114,3 @@ const Website = () => {
     //     </Typography>
     //   </>
     // </div>
-    <div>
-<Typography variant="h2">
-  ddzfgdfgxfgbxfgb
-</Typography>
-    </div>
-  );
-};
-
-export default Website;
