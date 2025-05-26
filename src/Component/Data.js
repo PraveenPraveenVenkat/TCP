@@ -41,7 +41,7 @@ export const Data = [
     iconName: "Email",
     subMenu: [
       { title: "FAQ", path: "/FAQ" },
-      { title: "Website", path: "/services/app" },
+      { title: "DropAMail", path: "/DropAMail"},
     ],
   },
   {

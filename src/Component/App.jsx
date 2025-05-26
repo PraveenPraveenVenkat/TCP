@@ -23,6 +23,7 @@ import WebDevelopment from "./WebDevelopment";
 import AppDevelopment from "./AppDevelopment";
 import Architect from "./Architect";
 import  FAQ from './FAQ';
+import DropAMail from "./DropAMail";
 
 function AppLayout() {
   const location = useLocation();
@@ -36,20 +37,7 @@ function AppLayout() {
     },
   });
 
-  // const items =[
 
-  //   {
-  //     id:"1",
-  //     food:"Cupcake",
-  //     calories:"159",
-  //   },
-  //   {
-  //     id:"2",
-  //     food:"ice cream",
-  //     calories:"237",
-  //   },
-
-  // ]
 
   return (
     <>
@@ -79,6 +67,7 @@ function AppLayout() {
         <Route path="/AppDevelopment" element={<AppDevelopment />} />
         <Route path="/Architect" element={<Architect />} />
         <Route path="/FAQ" element={<FAQ />} />
+        <Route path="/DropAMail" element={<DropAMail/>} />
       </Routes>
 
       <SideBar />
